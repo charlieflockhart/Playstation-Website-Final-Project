@@ -1,3 +1,9 @@
+:root {
+    --playstation_blue: #00439C;
+    --playstation_black: #000000;
+    --playstation_white: #F9FAFC;
+}
+
 body {
     background-color: #F9FAFC;
 }
@@ -22,11 +28,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: var(--playstation_blue);
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: var(--playstation_white)
 }
 
 .card {
@@ -163,3 +169,9 @@ body {
 .profile-image {
     width: 75%;
 }
+
+
+
+/* .navbar {
+    background-color: var(--playstation_black);
+} */

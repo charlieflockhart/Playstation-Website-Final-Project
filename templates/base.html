@@ -9,7 +9,26 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Playstation Store</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -34,8 +53,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/playstation_logo.webp' %}" alt="PlayStation Logo" width="40" height="30">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,6 +65,16 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active" aria-current="page{%endif%}" href="{% url 'home' %}">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == games_url %}active" aria-current="page{%endif%}" href="{% url 'home' %}">Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == support_url %}active" aria-current="page{%endif%}" href="{% url 'home' %}">Support</a>
+                    </li>
+                </ul> 
+            </div>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 accounts">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
 	                    <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{%endif%}" href="{% url 'account_logout' %}">Logout</a>
@@ -54,13 +84,10 @@
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{%endif%}" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{%endif%}" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{%endif%}" href="{% url 'account_login' %}">Sign In</a>
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
             </div>
         </div>
     </nav>
@@ -80,16 +107,9 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
-
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-
     </main>
 
     <!-- Footer -->
@@ -97,12 +117,15 @@
         <p class="m-0 text-center text-white">
             {% block copyright %}
                 Made by Charlie Flockhart
+                <br>
+                @ 2025 Playstation Store - Sony Interactive Entertainment LLC
             {% endblock copyright %}
         </p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
+        <p class="m-0 text-center text-white">Connect 
+            <a href="https://www.facebook.com/playstation/" target="_blank" class="text-white"><i class="fab fa-facebook-square ms-3"></i></a> 
+            <a href="https://x.com/PlayStation" target="_blank" class="text-white"><i class="fab fa-twitter-square ms-3"></i></a> 
+            <a href="https://www.instagram.com/PlayStation/" target="_blank" class="text-white"><i class="fab fa-instagram-square ms-3"></i></a> 
+            <a href="https://www.youtube.com/user/playstation" target="_blank" class="text-white"><i class="fab fa-youtube-square ms-3"></i></a>
         </p>
     </footer>
 
@@ -110,7 +133,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 
-    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+    <script src="{% static 'js/script.js' %}"></script>
 
     {% block extras %}
     {% endblock %}
