@@ -13,6 +13,11 @@ class PostList(generic.ListView):
     template_name = "store/index.html"
     paginate_by = 6
 
+def store(request):
+    return render(
+        request,
+        "store/index.html",
+    )
 
 def post_detail(request, slug):
     """

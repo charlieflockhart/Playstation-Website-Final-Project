@@ -126,7 +126,7 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: var(--playstation_blue);
 }
 
 .link {
