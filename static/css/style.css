@@ -2,6 +2,8 @@
     --playstation_blue: #00439C;
     --playstation_black: #000000;
     --playstation_white: #F9FAFC;
+    --playstation_black_transparent: rgba(0, 0, 0, 0.9);
+    --playstation_orange: #D53D02;
 }
 
 body {
@@ -189,6 +191,29 @@ body {
     background-color: var(--playstation_blue);
     width: 100%;
     border-radius: 50px;
+}
+
+.masthead {
+    margin-top: 0px;
+    overflow: visible;
+    height: 40vh;
+    width: 100%;
+}
+
+.card_new {
+    background-color: var(--playstation_black_transparent);
+    padding-bottom: 20px;
+}
+
+.orange_purchase_button {
+    background-color : var(--playstation_orange);
+    border-color: var(--playstation_orange);
+    border-radius: 25px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 /* .navbar {

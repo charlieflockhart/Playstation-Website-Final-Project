@@ -1,0 +1,86 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table user {
+  id integer
+  username varchar
+  level integer
+}
+
+Table developer {
+  id integer
+  username varchar
+  developer varchar
+
+}
+
+Table game_page {
+  main_image game_page_details_model
+  title game_page_details_model
+  release_date game_page_details_model
+  game_version game_page_details_model
+  rating float
+  price game_page_details_model
+  playtime game_page_details_model
+  pegi_rating game_page_details_model
+  game_info game_page_details_model
+  developer game_page_details_model
+  awards_won game_page_details_model
+  game_platform game_page_details_model
+  technical_refresh_rate game_page_details_model
+  technical_hdr game_page_details_model
+  technical_storage_size game_page_details_model
+  technical_online_play game_page_details_model
+  technical_online_players game_page_details_model
+  technical_monthly_concurrant_players game_page_details_model
+  platinum_trophies game_page_details_model
+  trophy_amount game_page_details_model 
+  patch_notes game_page_details_model
+  reviews reviews_model
+  recommended_games images
+  legal text
+}
+
+Table game_page_details {
+  main_image image
+  title varchar
+  release_date date
+  game_version float
+  price integer
+  playtime float
+  pegi_rating integer
+  game_info text
+  developer varchar
+  awards_won text
+  game_platform text
+  technical_refresh_rate integer
+  technical_hdr bool
+  technical_storage_size integer
+  technical_online_play bool
+  technical_online_players integer
+  technical_monthly_concurrant_players integer
+  platinum_trophies bool
+  trophy_amount integer 
+  patch_notes text
+}
+
+Table reviews {
+  username varchar
+  level integer
+  rating integer
+  platinum_acheived boolean
+  platinum_stability integer
+  glitchy_trophies text
+  game_version float
+  playtime float
+  platform platform_model
+  comment text
+}
+
+
+Ref: game_page_details.developer > developer.developer
+
+Ref: reviews.username > user.username
+Ref: reviews.level > user.level
+
+// Ref: reviews > game_page.reviews
