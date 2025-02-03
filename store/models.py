@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -27,11 +28,12 @@ class Post(models.Model):
     technical_storagesize = models.IntegerField(default=0)
     technical_online_play = models.BooleanField(default=False)
     technical_online_players = models.IntegerField(default=0)
-    technical_online_crossplay = models.BooleanField(default=False)
+    technical_online_console_crossplay = models.BooleanField(default=False)
+    technical_online_pc_crossplay = models.BooleanField(default=False)
     technical_monthly_concurrent_players = models.IntegerField(default=0)
     platinum_trophies = models.BooleanField(default=False)
-    trophy_ammount = models.IntegerField(default=0)
-    patch_notes = models.TextField(default='')
+    trophy_amount = models.IntegerField(default=0)
+    patch_notes_url = models.URLField(default='https://store.playstation.com/en-gb/pages/latest')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
@@ -44,10 +46,21 @@ class Post(models.Model):
         return f"{self.title} | written by {self.author}"
 
 class Comment(models.Model):
-    post = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    level = models.IntegerField(default=0)
+    rating = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    platinum_achieveved = models.BooleanField(default=False)
+    platinum_stability = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    glitched_trophies = models.BooleanField(default=False)
+    glitched_trophies_list = models.TextField(default='No Glitched Trophies Have Been Posted Here Yet..')
+    game_version = models.DecimalField(max_digits=6, decimal_places=2, default=Post.objects.latest('created_on').game_version if Post.objects.exists() else 0.00)
+    playtime = models.IntegerField(default=0)
+    PLATFORM_CHOICES = [
+        ('PS4', 'PlayStation 4'),
+        ('PS5', 'PlayStation 5'),
+    ]
+    platform = models.CharField(max_length=3, choices=PLATFORM_CHOICES, default='PS4')
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)

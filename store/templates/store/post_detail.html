@@ -26,7 +26,7 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.developer }} | {{ post.release_date }}</p>
                 <p class="post-subtitle">£{{ post.price }}</p>
-                <button type="button" class="btn btn-primary orange_purchase_button">Purchase</button>
+                <button type="button" class="btn btn-primary orange_purchase_button" id="purchaseButton">Purchase</button>
             </div>
         </div>
     </div>
@@ -35,14 +35,31 @@
     </div>
     <div class="col card mb-4 mt-3 left top">
         <div class="col-md-6 masthead-text card_new">
-        <p class="post-subtitle">Game Version | {{ post.game_version }}</p>
-        <p class="post-subtitle">Hours Expected | {{ post.playtime}} Hours</p>
-        <p class="post-subtitle">Age Rating | {{ post.age_rating }}</p>
-        <p class="post-subtitle">Genre | {{ post.genre }}</p>
-        <p class="post-subtitle">Platform | {{ post.game_platform }}</p>
         <p class="post-subtitle">Publisher | {{ post.publisher }}</p>
         <p class="post-subtitle">Developer | {{ post.developer }}</p>
+        <p class="post-subtitle">Game Version | {{ post.game_version }}</p>
+        <p class="post-subtitle">Gameplay Time | {{ post.playtime}} Hours</p>
+        <p class="post-subtitle">Age Rating | {{ post.age_rating }}</p>
+        <p class="post-subtitle">Genre | {{ post.genre }}</p>
+        <br>
+        <hr>Technical Info<hr> 
+        <p class="post-subtitle">Platform | {{ post.game_platform }}</p>
+        <p class="post-subtitle">Refresh Rate | {{ post.technical_refresh_rate }} FPS</p>
+        <p class="post-subtitle">HDR Support | {{ post.technical_hdr|yesno:"Yes,No" }}</p>
+        <p class="post-subtitle">Storage Size | {{ post.technical_storagesize }} GB</p>
+        <p class="post-subtitle">Online Play | {{ post.technical_online_play|yesno:"Yes,No" }}</p>
+        <p class="post-subtitle">Max Players | {{ post.technical_online_players }}</p>
+        <p class="post-subtitle">Console Crossplay Support | {{ post.technical_online_console_crossplay|yesno:"Yes,No" }}</p>
+        <p class="post-subtitle">PC Crossplay Support | {{ post.technical_online_pc_crossplay|yesno:"Yes,No" }}</p>
+        <p class="post-subtitle">Monthly Players | {{ post.technical_monthly_concurrent_players }}</p>
+        <hr>Trophies<hr>
+        <p class="post-subtitle">Platinum | {{ post.platinum_trophies|yesno:"Yes,No" }}</p>
+        {% if post.platinum_trophies %}
+        <p class="post-subtitle">Platinum Trophies | {{ post.trophy_amount }}</p>
+        {% endif %}
         </div>
+        <br>
+        <button class="btn btn-primary orange_purchase_button" onclick="window.open('{{ post.patch_notes_url }}', '_blank')">Patch Notes</button>
     </div>
     <div>
         <h1>Game And Legal Info</h1>
@@ -68,12 +85,29 @@
                 <div
                     class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
-                        {{ comment.author }}
-                        <span class="font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
+                        {{ comment.author }} | {{ comment.created_on }}
                     </p>
-                    <div id="comment{{ comment.id }}">
+                    <p>Playstaion Level | {{ comment.level }}</p>
+                    <p>Rating | {{ comment.rating }}</p>
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#commentDetails{{ comment.id }}" aria-expanded="false" aria-controls="commentDetails{{ comment.id }}">
+                        View Details
+                    </button>
+                    <div class="collapse" id="commentDetails{{ comment.id }}">
+                        
+                        <p>Platinum Achieved | {{ comment.platinum_achieveved|yesno:"Yes,No" }}</p>
+                        {% if comment.platinum_achieveved %}
+                        <p>Platinum Stability | {{ comment.platinum_stability }}</p>
+                        {% endif %}
+                        <p>Glitched Trophies | {{ comment.glitched_trophies|yesno:"Yes,No" }}</p>
+                        {% if comment.glitched_trophies %}
+                        <p>Glitched Trophies List | {{ comment.glitched_trophies_list }}</p>
+                        {% endif %}
+                        <p>Game Version | {{ comment.game_version }}</p>
+                        <p>Time Played | {{ comment.playtime }} Hours</p>
+                        <p>Platform | {{ comment.platform }}</p>
+                        <div class="col-12">
+                            <hr>
+                        </div>
                         {{ comment.body | linebreaks }}
                     </div>
                     {% if not comment.approved and comment.author == user %}
