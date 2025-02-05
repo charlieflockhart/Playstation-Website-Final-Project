@@ -35,6 +35,10 @@ Table game_page {
   technical_monthly_concurrant_players game_page_details_model
   platinum_trophies game_page_details_model
   trophy_amount game_page_details_model 
+  trophy_achieved_percentage game_page_details_model 
+  trophy_duration_to_plat game_page_details_model 
+  trophy_plat_difficulty game_page_details_model 
+  trophy_glitchiness game_page_details_model 
   patch_notes game_page_details_model
   reviews reviews_model
   recommended_games images
@@ -61,6 +65,10 @@ Table game_page_details {
   technical_monthly_concurrant_players integer
   platinum_trophies bool
   trophy_amount integer 
+  trophy_achieved_percentage float
+  trophy_duration_to_plat integer
+  trophy_plat_difficulty integer
+  trophy_glitchiness integer
   patch_notes text
 }
 
