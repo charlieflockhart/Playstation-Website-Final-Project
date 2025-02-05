@@ -1,9 +1,13 @@
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentLevel_Value = document.getElementById("id_level");
 const commentRating_Value = document.getElementById("id_rating");
-const commentPlat_Bool = document.getElementById("id_platinum_achieved");
-const commentGame_Version = document.getElementById("id_game_version");
-const commentBody = document.getElementById("id_body");
+// const commentPlat_Bool = document.getElementById("id_platinum_achieved");
+const commentPlatinumStability_Value = document.getElementById("id_platinum_stability");
+// const commentGlitchedTrophies_Bool = document.getElementById("id_glitched_trophies");
+const commentGlitchedTrophiesList_Value = document.getElementById("id_glitched_trophies_list");
+const commentGame_Version_Value = document.getElementById("id_game_version");
+const commentPlaytime_Value = document.getElementById("id_playtime");
+const commentBody_Value = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 
@@ -29,14 +33,24 @@ for (let button of editButtons) {
 
     let commentLevel = document.getElementById(`level${commentId}`).innerText;
     let commentRating = document.getElementById(`rating${commentId}`).innerText;
+    // let commentPlatinumAchieved = document.getElementById(`platinum_achieved${commentId}`).innerText;
+    let commentPlatinumStability = document.getElementById(`platinum_stability${commentId}`).innerText;
+     // let commentGlitchedTrophies = document.getElementById(`glitched_trophies${commentId}`).innerText;
+    let commentGlitchedTrophiesList = document.getElementById(`glitched_trophies_list${commentId}`).innerText;
     let commentGameVersion = document.getElementById(`game_version${commentId}`).innerText;
+    let commentPlaytime = document.getElementById(`playtime${commentId}`).innerText;
     let commentText = document.getElementById(`text${commentId}`).innerText;
 
 
     commentLevel_Value.value = commentLevel;
     commentRating_Value.value = commentRating;
-    commentGame_Version.value = commentGameVersion;
-    commentBody.value = commentText;
+    // commentPlat_Bool.value = commentPlatinumAchieved;
+    commentPlatinumStability_Value.value = commentPlatinumStability;
+    // commentGlitchedTrophies_Bool.value = commentGlitchedTrophies;
+    commentGlitchedTrophiesList_Value.value = commentGlitchedTrophiesList;
+    commentGame_Version_Value.value = commentGameVersion;
+    commentPlaytime_Value.value = commentPlaytime;
+    commentBody_Value.value = commentText;
 
 
 

@@ -101,16 +101,16 @@
                     </button>
                     <div class="collapse" id="commentDetails{{ comment.id }}">
                         
-                        <div>Platinum Achieved | {{ comment.platinum_achieveved|yesno:"Yes,No" }}</div>
-                        {% if comment.platinum_achieveved %}
-                        <div>Platinum Stability | {{ comment.platinum_stability }}</div>
+                        <div>Platinum Achieved | <span id="platinum_achieved{{ comment.id }}">{{ comment.platinum_achieved }}</span></div>
+                        {% if comment.platinum_achieved %}
+                        <div>Platinum Stability | <span id="platinum_stability{{ comment.id }}">{{ comment.platinum_stability }}</span></div>
                         {% endif %}
-                        <div>Glitched Trophies | {{ comment.glitched_trophies|yesno:"Yes,No" }}</div>
+                        <div>Glitched Trophies | <span id="glitched_trophies{{ comment.id }}">{{ comment.glitched_trophies|yesno:"Yes,No" }}</span></div>
                         {% if comment.glitched_trophies %}
-                        <div>Glitched Trophies List | {{ comment.glitched_trophies_list }}</div>
+                        <div>Glitched Trophies List | <span id="glitched_trophies_list{{ comment.id }}">{{ comment.glitched_trophies_list }}</span></div>
                         {% endif %}
                         <div>Game Version | <span id="game_version{{ comment.id }}">{{ comment.game_version }}</span></div>
-                        <div>Time Played | {{ comment.playtime }} Hours</div>
+                        <div>Time Played | <span id="playtime{{ comment.id }}">{{ comment.playtime }}</span> Hours</div>
                         <div>Platform | {{ comment.platform }}</div>
                         <div class="col-12">
                             <hr>
