@@ -37,14 +37,17 @@
         <div class="col-md-6 masthead-text card_new">
         <p class="post-subtitle">Publisher | {{ post.publisher }}</p>
         <p class="post-subtitle">Developer | {{ post.developer }}</p>
-        <p class="post-subtitle">Game Version | {{ post.game_version }}</p>
+        <p class="post-subtitle" id="game_version_current">Game Version | {{ post.game_version }}</p>
         <p class="post-subtitle">Gameplay Time | {{ post.playtime}} Hours</p>
         <p class="post-subtitle">Age Rating | {{ post.age_rating }}</p>
         <p class="post-subtitle">Genre | {{ post.genre }}</p>
         <br>
         <hr>Technical Info<hr> 
         <p class="post-subtitle">Platform | {{ post.game_platform }}</p>
+        <p class="post-subtitle">Subtitles | {{ post.technical_subtitles|yesno:"Yes,No" }}</p>
         <p class="post-subtitle">Refresh Rate | {{ post.technical_refresh_rate }} FPS</p>
+        <p class="post-subtitle">VRR Support | {{ post.technical_vrr|yesno:"Yes,No" }}</p>
+        <p class="post-subtitle">Ray Tracing | {{ post.technical_ray_tracing|yesno:"Yes,No" }}</p>
         <p class="post-subtitle">HDR Support | {{ post.technical_hdr|yesno:"Yes,No" }}</p>
         <p class="post-subtitle">Storage Size | {{ post.technical_storagesize }} GB</p>
         <p class="post-subtitle">Online Play | {{ post.technical_online_play|yesno:"Yes,No" }}</p>
@@ -55,8 +58,13 @@
         <hr>Trophies<hr>
         <p class="post-subtitle">Platinum | {{ post.platinum_trophies|yesno:"Yes,No" }}</p>
         {% if post.platinum_trophies %}
-        <p class="post-subtitle">Platinum Trophies | {{ post.trophy_amount }}</p>
+        <p class="post-subtitle">Trophies Needed To Platinum | {{ post.trophy_amount }}</p>
+        <p class="post-subtitle">Platinum Percentage | {{ post.trophy_achieved_percentage }}%</p>
+        <p class="post-subtitle">Platinum Duration | {{ post.trophy_duration_to_plat }} Hours</p>
+        <p class="post-subtitle">Platinum Difficulty (1-10) (Easy - Difficult) | {{ post.trophy_plat_difficulty }}</p>
+        <p class="post-subtitle">Platinum Glitched (1-10) (None - Unobtainable) | {{ post.trophy_plat_glitchiness }}</p>
         {% endif %}
+        
         </div>
         <br>
         <button class="btn btn-primary orange_purchase_button" onclick="window.open('{{ post.patch_notes_url }}', '_blank')">Patch Notes</button>
@@ -82,33 +90,32 @@
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div
-                    class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}" id="commentDetails{{ comment.id }}">
                     <p class="font-weight-bold">
                         {{ comment.author }} | {{ comment.created_on }}
                     </p>
-                    <p>Playstaion Level | {{ comment.level }}</p>
-                    <p>Rating | {{ comment.rating }}</p>
+                    <div>Playstaion Level | <span id="level{{ comment.id }}">{{ comment.level }}</span></div>
+                    <p>Rating | <span id="rating{{ comment.id }}">{{ comment.rating }}</span></p>
                     <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#commentDetails{{ comment.id }}" aria-expanded="false" aria-controls="commentDetails{{ comment.id }}">
                         View Details
                     </button>
                     <div class="collapse" id="commentDetails{{ comment.id }}">
                         
-                        <p>Platinum Achieved | {{ comment.platinum_achieveved|yesno:"Yes,No" }}</p>
+                        <div>Platinum Achieved | {{ comment.platinum_achieveved|yesno:"Yes,No" }}</div>
                         {% if comment.platinum_achieveved %}
-                        <p>Platinum Stability | {{ comment.platinum_stability }}</p>
+                        <div>Platinum Stability | {{ comment.platinum_stability }}</div>
                         {% endif %}
-                        <p>Glitched Trophies | {{ comment.glitched_trophies|yesno:"Yes,No" }}</p>
+                        <div>Glitched Trophies | {{ comment.glitched_trophies|yesno:"Yes,No" }}</div>
                         {% if comment.glitched_trophies %}
-                        <p>Glitched Trophies List | {{ comment.glitched_trophies_list }}</p>
+                        <div>Glitched Trophies List | {{ comment.glitched_trophies_list }}</div>
                         {% endif %}
-                        <p>Game Version | {{ comment.game_version }}</p>
-                        <p>Time Played | {{ comment.playtime }} Hours</p>
-                        <p>Platform | {{ comment.platform }}</p>
+                        <div>Game Version | <span id="game_version{{ comment.id }}">{{ comment.game_version }}</span></div>
+                        <div>Time Played | {{ comment.playtime }} Hours</div>
+                        <div>Platform | {{ comment.platform }}</div>
                         <div class="col-12">
                             <hr>
                         </div>
-                        {{ comment.body | linebreaks }}
+                        <div id="text{{ comment.id }}">{{ comment.body | linebreaks }}</div>
                     </div>
                     {% if not comment.approved and comment.author == user %}
                     <p class="approval">This comment is awaiting approval</p>

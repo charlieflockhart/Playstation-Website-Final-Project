@@ -27,7 +27,10 @@ Table game_page {
   developer game_page_details_model
   awards_won game_page_details_model
   game_platform game_page_details_model
+  technical_subtitles game_page_details_model
   technical_refresh_rate game_page_details_model
+  technical_vrr game_page_details_model
+  technical_ray_tracing game_page_details_model
   technical_hdr game_page_details_model
   technical_storage_size game_page_details_model
   technical_online_play game_page_details_model
@@ -38,7 +41,7 @@ Table game_page {
   trophy_achieved_percentage game_page_details_model 
   trophy_duration_to_plat game_page_details_model 
   trophy_plat_difficulty game_page_details_model 
-  trophy_glitchiness game_page_details_model 
+  trophy_plat_glitchiness game_page_details_model 
   patch_notes game_page_details_model
   reviews reviews_model
   recommended_games images
@@ -57,7 +60,10 @@ Table game_page_details {
   developer varchar
   awards_won text
   game_platform text
+  technical_subtitles bool
   technical_refresh_rate integer
+  technical_vrr bool
+  technical_ray_tracing bool
   technical_hdr bool
   technical_storage_size integer
   technical_online_play bool
@@ -68,7 +74,7 @@ Table game_page_details {
   trophy_achieved_percentage float
   trophy_duration_to_plat integer
   trophy_plat_difficulty integer
-  trophy_glitchiness integer
+  trophy_plat_glitchiness integer
   patch_notes text
 }
 

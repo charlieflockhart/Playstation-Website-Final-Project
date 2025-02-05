@@ -1,5 +1,9 @@
 const editButtons = document.getElementsByClassName("btn-edit");
-const commentText = document.getElementById("id_body");
+const commentLevel_Value = document.getElementById("id_level");
+const commentRating_Value = document.getElementById("id_rating");
+const commentPlat_Bool = document.getElementById("id_platinum_achieved");
+const commentGame_Version = document.getElementById("id_game_version");
+const commentBody = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 
@@ -21,8 +25,21 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("data-comment_id");
-    let commentContent = document.getElementById(`comment${commentId}`).innerText;
-    commentText.value = commentContent;
+
+
+    let commentLevel = document.getElementById(`level${commentId}`).innerText;
+    let commentRating = document.getElementById(`rating${commentId}`).innerText;
+    let commentGameVersion = document.getElementById(`game_version${commentId}`).innerText;
+    let commentText = document.getElementById(`text${commentId}`).innerText;
+
+
+    commentLevel_Value.value = commentLevel;
+    commentRating_Value.value = commentRating;
+    commentGame_Version.value = commentGameVersion;
+    commentBody.value = commentText;
+
+
+
     submitButton.innerText = "Update";
     commentForm.setAttribute("action", `edit_comment/${commentId}`);
   });
