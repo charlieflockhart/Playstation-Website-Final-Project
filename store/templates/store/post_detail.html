@@ -90,10 +90,11 @@
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}" id="commentDetails{{ comment.id }}">
+                <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }} | {{ comment.created_on }}
                     </p>
+                    <div><h4 id="title{{ comment.id }}">{{ comment.title }}</h4></div>
                     <div>Playstaion Level | <span id="level{{ comment.id }}">{{ comment.level }}</span></div>
                     <p>Rating | <span id="rating{{ comment.id }}">{{ comment.rating }}</span></p>
                     <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#commentDetails{{ comment.id }}" aria-expanded="false" aria-controls="commentDetails{{ comment.id }}">
@@ -101,7 +102,7 @@
                     </button>
                     <div class="collapse" id="commentDetails{{ comment.id }}">
                         
-                        <div>Platinum Achieved | <span id="platinum_achieved{{ comment.id }}">{{ comment.platinum_achieved }}</span></div>
+                        <div>Platinum Achieved | <span id="platinum_achieved{{ comment.id }}">{{ comment.platinum_achieved|yesno:"Yes,No" }}</span></div>
                         {% if comment.platinum_achieved %}
                         <div>Platinum Stability | <span id="platinum_stability{{ comment.id }}">{{ comment.platinum_stability }}</span></div>
                         {% endif %}
@@ -111,11 +112,14 @@
                         {% endif %}
                         <div>Game Version | <span id="game_version{{ comment.id }}">{{ comment.game_version }}</span></div>
                         <div>Time Played | <span id="playtime{{ comment.id }}">{{ comment.playtime }}</span> Hours</div>
-                        <div>Platform | {{ comment.platform }}</div>
+                        <div>Platform | <span id="platform{{ comment.id }}">{{ comment.platform }}</span></div>
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div id="text{{ comment.id }}">{{ comment.body | linebreaks }}</div>
+                        <div><h6 id="text{{ comment.id }}">{{ comment.body | linebreaks }}</h6></div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
                     </div>
                     {% if not comment.approved and comment.author == user %}
                     <p class="approval">This comment is awaiting approval</p>

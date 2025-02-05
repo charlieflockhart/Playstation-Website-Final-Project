@@ -1,12 +1,14 @@
 const editButtons = document.getElementsByClassName("btn-edit");
+const commentTitle_Value = document.getElementById("id_title");
 const commentLevel_Value = document.getElementById("id_level");
 const commentRating_Value = document.getElementById("id_rating");
-// const commentPlat_Bool = document.getElementById("id_platinum_achieved");
+const commentPlat_Bool = document.getElementById("id_platinum_achieved");
 const commentPlatinumStability_Value = document.getElementById("id_platinum_stability");
-// const commentGlitchedTrophies_Bool = document.getElementById("id_glitched_trophies");
+const commentGlitchedTrophies_Bool = document.getElementById("id_glitched_trophies");
 const commentGlitchedTrophiesList_Value = document.getElementById("id_glitched_trophies_list");
 const commentGame_Version_Value = document.getElementById("id_game_version");
 const commentPlaytime_Value = document.getElementById("id_playtime");
+const commentPlatform_Value = document.getElementById("id_platform");
 const commentBody_Value = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
@@ -30,26 +32,29 @@ for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("data-comment_id");
 
-
+    let commentTitle = document.getElementById(`title${commentId}`).innerText;
     let commentLevel = document.getElementById(`level${commentId}`).innerText;
     let commentRating = document.getElementById(`rating${commentId}`).innerText;
-    // let commentPlatinumAchieved = document.getElementById(`platinum_achieved${commentId}`).innerText;
+    let commentPlatinumAchieved = document.getElementById(`platinum_achieved${commentId}`).innerText.trim().toLowerCase() === "yes";
     let commentPlatinumStability = document.getElementById(`platinum_stability${commentId}`).innerText;
-     // let commentGlitchedTrophies = document.getElementById(`glitched_trophies${commentId}`).innerText;
+    let commentGlitchedTrophies = document.getElementById(`glitched_trophies${commentId}`).innerText.trim().toLowerCase() === "yes";
     let commentGlitchedTrophiesList = document.getElementById(`glitched_trophies_list${commentId}`).innerText;
     let commentGameVersion = document.getElementById(`game_version${commentId}`).innerText;
     let commentPlaytime = document.getElementById(`playtime${commentId}`).innerText;
+    let commentPlatform = document.getElementById(`platform${commentId}`).innerText;
     let commentText = document.getElementById(`text${commentId}`).innerText;
 
 
+    commentTitle_Value.value = commentTitle;
     commentLevel_Value.value = commentLevel;
     commentRating_Value.value = commentRating;
-    // commentPlat_Bool.value = commentPlatinumAchieved;
+    commentPlat_Bool.checked = commentPlatinumAchieved;
     commentPlatinumStability_Value.value = commentPlatinumStability;
-    // commentGlitchedTrophies_Bool.value = commentGlitchedTrophies;
+    commentGlitchedTrophies_Bool.checked = commentGlitchedTrophies;
     commentGlitchedTrophiesList_Value.value = commentGlitchedTrophiesList;
     commentGame_Version_Value.value = commentGameVersion;
     commentPlaytime_Value.value = commentPlaytime;
+    commentPlatform_Value.value = commentPlatform;
     commentBody_Value.value = commentText;
 
 

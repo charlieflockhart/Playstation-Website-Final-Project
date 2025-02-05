@@ -55,6 +55,7 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    title = models.CharField(max_length=200)
     level = models.IntegerField(default=0)
     rating = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     platinum_achieved = models.BooleanField(default=False)
