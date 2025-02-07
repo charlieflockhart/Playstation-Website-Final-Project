@@ -4,6 +4,35 @@
 {% block content %}
 
 <!-- index.html content starts here -->
+
+<h1>GAMES</h1>
+<div>
+    <form method="POST" action="{% url 'search' %}">
+
+        {% csrf_token %}
+        <input type="text" name="searched" placeholder="Grand Theft Auto VI">
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if results %}
+        <ul>
+            {% for post in results %}
+                <li>{{ post.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+    <div class="filter-tab">
+        <label for="filter">Filter by:</label>
+        <select id="filter" name="filter" class="form-control">
+            <option value="">Select</option>
+            <option value="price">Price</option>
+            <option value="developer">Developer</option>
+        </select>
+    </div>
+</div>
 <div class="container-fluid">
     <div class="row">
 
@@ -39,6 +68,24 @@
             </div>
         </div>
     </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}"
+                  class="page-link">&laquo; PREV</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}"
+                  class="page-link">NEXT &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 
 <!-- index.html content ends here -->

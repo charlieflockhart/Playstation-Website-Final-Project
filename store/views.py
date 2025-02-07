@@ -7,6 +7,7 @@ from .forms import CommentForm
 
 # Create your views here.
 
+# STORE VIEWS
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -19,6 +20,51 @@ def store(request):
         request,
         "store/index.html",
     )
+
+# GAMES VIEWS
+
+class GamesList(generic.ListView):
+    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.all()
+    template_name = "store/games.html"
+    paginate_by = 6
+
+def games(request):
+    return render(
+        request,
+        "store/games.html",
+    )
+
+# GAMES SEARCHED VIEWS
+
+class GamesSearchedList(generic.ListView):
+    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.all()
+    template_name = "store/games_searched.html"
+    paginate_by = 6
+
+def games_searched(request):
+    if request.method == "POST":
+        # searched = request.POST['searched']
+
+        return render(request,
+            "store/games_searched.html",
+            # {"searched": searched}
+        )
+    else:
+        return render(
+            request,
+            "store/games_searched.html",
+        )
+
+# def search_view(request):
+#     query = request.GET.get('query', '')
+#     results = []
+
+#     if query:
+#         results = Post.objects.filter(name__icontains=query)  # Case-insensitive search
+
+#     return render(request, 'search_results.html', {'results': results, 'query': query})
 
 def post_detail(request, slug):
     """
