@@ -13,3 +13,4 @@ from django_summernote.admin import SummernoteModelAdmin
 class SupportRequestAdmin(admin.ModelAdmin):
 
     list_display = ('message', 'read',)
+    list_filter = ('read', 'issue_type',)

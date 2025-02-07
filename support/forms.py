@@ -5,4 +5,4 @@ from django import forms
 class SupportRequestForm(forms.ModelForm):
     class Meta:
         model = SupportRequest
-        fields = ('name', 'email', 'message')
+        fields = ('name', 'email', 'issue_type',  'message')
