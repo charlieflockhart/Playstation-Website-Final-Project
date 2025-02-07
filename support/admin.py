@@ -1,11 +1,6 @@
 from django.contrib import admin
-from .models import Support, CollaborateRequest
+from .models import SupportRequest
 from django_summernote.admin import SummernoteModelAdmin
-
-
-@admin.register(Support)    
-class SupportAdmin(SummernoteModelAdmin):
-    summernote_fields = ('content',)
 
 # Note: admin.ModelAdmin is the standard way of registering
 #       our model with the admin panel. We do it differently
@@ -14,7 +9,7 @@ class SupportAdmin(SummernoteModelAdmin):
 #       own projects, then inherit from admin.ModelAdmin like
 #       we do below.
 
-@admin.register(CollaborateRequest)
-class CollaborateRequestAdmin(admin.ModelAdmin):
+@admin.register(SupportRequest)
+class SupportRequestAdmin(admin.ModelAdmin):
 
     list_display = ('message', 'read',)

@@ -1,28 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Support
-from .forms import CollaborateForm
+from .forms import SupportRequestForm
 
 
 def about_me(request):
-    
     if request.method == "POST":
-        collaborate_form = CollaborateForm(data=request.POST)
-        if collaborate_form.is_valid():
-            collaborate_form.save()
-            messages.add_message(request, messages.SUCCESS, "Collaboration request received! I endeavour to respond within 2 working days.")
-            
+        supportRequest_form = SupportRequestForm(data=request.POST)
+        if supportRequest_form.is_valid():
+            supportRequest_form.save()
+            messages.add_message(request, messages.SUCCESS, "Please check your Email Inbox for a response within 3 - 5 working days.")
+            return redirect('support')
+                   
     """
     Renders the About page
     """
-    support = Support.objects.all().order_by('-updated_on').first()
-    collaborate_form = CollaborateForm()
+    supportRequest_form = SupportRequestForm()
 
 
     return render(
         request,
         "support/support.html",
-        {"support": support,
-         "collaborate_form": collaborate_form
+        {
+         "supportRequest_form": supportRequest_form
         },
     )
