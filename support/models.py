@@ -7,9 +7,9 @@ class SupportRequest(models.Model):
     issue_type = models.CharField(
         max_length=50,
         choices=[
+            ('general', 'General Inquiry'),
             ('technical', 'Technical Issue'),
-            ('billing', 'Billing Issue'),
-            ('general', 'General Inquiry')
+            ('billing', 'Billing Issue')
         ],
         default='general'
     )
