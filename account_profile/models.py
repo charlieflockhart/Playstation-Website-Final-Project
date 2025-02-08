@@ -14,4 +14,9 @@ class Profile(models.Model):
     
 class Game(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    games_purchased = models.TextField(default='')
+    games_purchased = models.TextField(default='Testing 123\nTesting 456')
+    # Grand_Theft_Auto_VI = models.BooleanField(default=False)
+    # Astro_Bot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.games_purchased

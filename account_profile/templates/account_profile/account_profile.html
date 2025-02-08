@@ -11,9 +11,10 @@
     <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
     <p><strong>Last Logged In:</strong> {{ user.last_login }}</p>
     <h3>Games Purchased</h3>
+    <li>{{ user.games_purchased }}</li>
     <ul>
-        {% for game in user.games_purchased.all %}
-            <li>{{ game.name }} - Purchased on {{ game.purchase_date }}</li>
+        {% for game in game.games_purchased.all %}
+            <li>{{ user.games_purchased }}</li>
         {% empty %}
             <li>No games purchased.</li>
         {% endfor %}

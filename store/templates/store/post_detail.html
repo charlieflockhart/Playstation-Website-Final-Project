@@ -26,8 +26,13 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.developer }} | {{ post.release_date }}</p>
                 <p class="post-subtitle">£{{ post.price }}</p>
-                <button type="button" class="btn btn-primary orange_purchase_button" id="purchaseButton">Purchase</button>
-            </div>
+                <button id="purchasedButton" type="button" class="btn btn-primary orange_purchase_button" onclick="games_purchased()">Purchase</button>
+                <script>
+                    function games_purchased() {
+                        console.log("Purchase button clicked");
+                    }
+                </script>
+</div> <!--  -->
         </div>
     </div>
     <div class="col-12">

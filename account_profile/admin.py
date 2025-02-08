@@ -18,8 +18,8 @@ from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 
 class AccountInLine(admin.StackedInline):
     model = Game
-    can_delete = False
-    extra = 1 # how many extra fields to display
+    can_delete = True
+    extra = 0 # how many extra fields to display
     verbose_name_plural = 'games_purchased'
 
 class CustomizedUserAdmin (AuthUserAdmin):

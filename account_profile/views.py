@@ -7,7 +7,7 @@ def about_me(request):
     
             
     """
-    Renders the About page
+    Renders the Profile page
     """
     profile = Profile.objects.all().order_by('-updated_on').first()
 
