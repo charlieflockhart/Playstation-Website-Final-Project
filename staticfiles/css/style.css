@@ -1,6 +1,3 @@
-/* Noto Sans Font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,100..900;1,62.5,100..900&display=swap');
-
 :root {
     --playstation_blue: #00439C;
     --playstation_black: #000000;
@@ -38,10 +35,6 @@ body {
 
 .main-bg {
     background-color: var(--playstation_white)
-}
-
-.row {
-        justify-content: center;
 }
 
 .card {
