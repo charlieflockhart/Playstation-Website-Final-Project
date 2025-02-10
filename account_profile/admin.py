@@ -16,19 +16,19 @@ from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 #       own projects, then inherit from admin.ModelAdmin like
 #       we do below.
 
-class AccountInLine(admin.StackedInline):
-    model = Game
-    can_delete = True
-    extra = 0 # how many extra fields to display
-    verbose_name_plural = 'games_purchased'
+# class AccountInLine(admin.StackedInline):
+#     model = Game
+#     can_delete = True
+#     extra = 0 # how many extra fields to display
+#     verbose_name_plural = 'games_purchased'
 
-class CustomizedUserAdmin (AuthUserAdmin):
-    inlines = (AccountInLine,)
+# class CustomizedUserAdmin (AuthUserAdmin):
+#     inlines = (AccountInLine,)
 
 
 class ProfileAdmin(admin.ModelAdmin):
     filter_horizontal = ('purchased_games',)
 
 admin.site.unregister(User)
-admin.site.register(User, CustomizedUserAdmin)
+admin.site.register(User)
 admin.site.register(Profile, ProfileAdmin)

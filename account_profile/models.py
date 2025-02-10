@@ -13,6 +13,7 @@ class Profile(models.Model):
     
 class Game(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    games_purchased = models.TextField(default='')
 
     def __str__(self):
         return self.games_purchased
