@@ -30,6 +30,10 @@
                     {% csrf_token %}
                     <button id="purchasedButton" type="submit" class="btn btn-primary orange_purchase_button" onclick="games_purchased()">Purchase</button>
                 </form>
+                <form id="id_check_game_purchased" action="{%url 'check_game_purchased' post.title %}" method="post" style="display: none;">
+                    {% csrf_token %}
+                    <button id="checkPurchasedButton" type="submit" class="btn btn-primary orange_purchase_button" onclick="games_purchased()">Check Purchase</button>
+                </form>
                 
                 <script>
                     const form = document.getElementById("id_purchase_game");
@@ -40,14 +44,36 @@
                     });
 
                     window.onload = function() {
+                        const checkForm = document.getElementById("id_check_game_purchased");
+                        checkForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            const checkPurchasedButton = document.getElementById("checkPurchasedButton");
+                            checkPurchasedButton.innerText = "Checking...";
+                            checkPurchasedButton.disabled = true;
+                            checkForm.submit();
+                            
+                        });
+                        
+                        checkGame();
+                    };
+
+                    function checkGame() {
+                        
+                        console.log("Checking if the game is purchased...");
                         const urlParams = new URLSearchParams(window.location.search);
                         if (urlParams.has('purchased') && urlParams.get('purchased') === 'true') {
                             const purchaseButton = document.getElementById('purchasedButton');
                             purchaseButton.textContent = 'Purchased';
                             purchaseButton.disabled = true;
+                            return;
+                        } else {
+                            const purchaseButton = document.getElementById('purchasedButton');
+                            purchaseButton.textContent = 'Purchase';
+                            purchaseButton.disabled = false;
+                            document.getElementById("checkPurchasedButton").click();
                         }
+                        
                     }
-                    
                 </script>
             </div>
         </div>

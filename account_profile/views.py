@@ -52,4 +52,15 @@ def move_game_to_chosen(request, title):
             messages.success(request, f"You have purchased the game: {title}")
 
     return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
-        
+
+@csrf_exempt
+def check_game_ownership(request, title):
+    print(f"checked this page for {title} ownership")
+    user = request.user
+    profile = get_object_or_404(Profile, user=user)
+    post = get_object_or_404(Post, title=title)
+
+    if post in profile.purchased_games.all():
+        return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
+    else:
+        return HttpResponseRedirect(reverse('post_detail', kwargs={'slug': post.slug}))
