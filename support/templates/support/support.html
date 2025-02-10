@@ -3,24 +3,26 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Contact Us</h2>
-            <h4>Email | <a href="mailto:help@ukplaystation.com">help@ukplaystation.com</a></h4>
-            <h4>Phone | 020 3538 2665</h4>
-            <a href="https://www.playstation.com/en-gb/support/contact-us/direct/?category=PS+Direct" class="btn btn-primary" target="_blank">Live Chat</a>
-            <br>
-
-            <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
-            <form method="post">
+<section class="support-form">
+    <div class="container mt-5 " >
+        <div class="row justify-content-center ">
+            <div class="col-12 col-md-6 my-5 supportbg">
+                <h2 class="contactus">Contact Us</h2>
+                <h4 class="email">Email | <a href="mailto:help@ukplaystation.com">help@ukplaystation.com</a></h4>
+                <h4 class="phone">Phone | 020 3538 2665</h4>
+                <a href="https://www.playstation.com/en-gb/support/contact-us/direct/?category=PS+Direct" class="btn btn-primary livechat" target="_blank">Live Chat</a>
                 <br>
-              {{ supportRequest_form | crispy }}
-              {% csrf_token %}
-              <button class="btn btn-secondary"
-                type="submit">Submit</button>
-            </form>
+
+                <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
+                <form method="post">
+                    <br>
+                {{ supportRequest_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary"
+                    type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}
