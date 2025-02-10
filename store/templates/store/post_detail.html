@@ -120,13 +120,9 @@
                     <div class="collapse" id="commentDetails{{ comment.id }}">
                         
                         <div>Platinum Achieved | <span id="platinum_achieved{{ comment.id }}">{{ comment.platinum_achieved|yesno:"Yes,No" }}</span></div>
-                        {% if comment.platinum_achieved %}
                         <div>Platinum Stability | <span id="platinum_stability{{ comment.id }}">{{ comment.platinum_stability }}</span></div>
-                        {% endif %}
                         <div>Glitched Trophies | <span id="glitched_trophies{{ comment.id }}">{{ comment.glitched_trophies|yesno:"Yes,No" }}</span></div>
-                        {% if comment.glitched_trophies %}
                         <div>Glitched Trophies List | <span id="glitched_trophies_list{{ comment.id }}">{{ comment.glitched_trophies_list }}</span></div>
-                        {% endif %}
                         <div>Game Version | <span id="game_version{{ comment.id }}">{{ comment.game_version }}</span></div>
                         <div>Time Played | <span id="playtime{{ comment.id }}">{{ comment.playtime }}</span> Hours</div>
                         <div>Platform | <span id="platform{{ comment.id }}">{{ comment.platform }}</span></div>

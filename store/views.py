@@ -98,6 +98,7 @@ def post_detail(request, slug):
                 request, messages.SUCCESS,
                 'Comment submitted'
             )
+            return HttpResponseRedirect(reverse('post_detail', args=[slug]))
     else:
         comment_form = CommentForm()
 
@@ -125,7 +126,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = False
+            comment.approved = True
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
