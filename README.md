@@ -1,6 +1,6 @@
 # Playstation Website Study
 INSERT IMAGE
-- Deployed project can be found [here](https://ey-up-me-pup-44c5def591d6.herokuapp.com/).
+- Deployed project can be found [here](https://playstation-store-cflockhart-c73e53b52336.herokuapp.com/).
 
 ## User experience
 ### Purpose
@@ -9,8 +9,8 @@ INSERT IMAGE
 - The target audience of this website would be Playstation based gamers.
 
 ## Agile methodology DO THIS SECTION
-- Agile methodology is "a set of methods and practices where solutions evolve through collaboration between self-organizing, cross-functional teams" ([reference](https://www.agilealliance.org/agile-essentials/)).
-- A project board was set-up to keep track of user stories. Each user story was assigned a 'MoSCoW' prioritisation (must have, should have, could have, won't have) tag. The board can be found [here](https://github.com/users/elamont174/projects/5/views/1).
+- Agile methodology is "a set of methods and practices where solutions evolve through collaboration between self-organizing, cross-functional teams" ([reference]()).
+- A project board was set-up to keep track of user stories. Each user story was assigned a 'MoSCoW' prioritisation (must have, should have, could have, won't have) tag. The board can be found [here]().
 
 ### User stories DO THIS SECTION
 
@@ -28,7 +28,7 @@ The colour scheme follows the same as the object of my study, Playstations own w
 ### Typography
 - Google fonts were used to source the font styles.
 - Since the website is based off Playstations own I found a font similar to it and have used it throughout the website.
-- ![Shantell Sans example font](static/images/shantell-sans.png)
+- ![Shantell Sans example font]()
 
 ## Images DO THIS SECTION
 IMAGES
@@ -87,10 +87,10 @@ INSERT
 
 ### Database planning DO THIS SECTION
 - I used an Entity Relationship Diagram to plan my database.
-- ![ERD diagram](static/images/epr.png.png)
+- ![ERD diagram]()
 
 ### Creating a database DO THIS SECTION
-1. Navigate to [PostgreSQL](https://dbs.ci-dbs.net/) from Code Institute.
+1. Navigate to [PostgreSQL]() from Code Institute.
 2. Enter your student email address in the input field provided.
 3. Click Submit.
 4. Wait while the database is created.
@@ -98,7 +98,7 @@ INSERT
 6. You now have a URL you can use to connect your app to your database.
 
 ## Deployment 
-- The website was deployed to Heroku and can be found [here](https://ey-up-me-pup-44c5def591d6.herokuapp.com/).
+- The website was deployed to Heroku and can be found [here](https://playstation-store-cflockhart-c73e53b52336.herokuapp.com/).
 
 ### Heroku DO THIS SECTION
 * Heroku is a cloud platform that lets developers create, deploy, monitor and manage apps.
@@ -135,7 +135,7 @@ INSERT
 3. Copy the URL for the repository.
 4. Open Git Bash or your chosen terminal.
 5. Navigate to the directory where you want to clone the repository.
-6. Type: git clone https://github.com/elamont174/ey-up-me-pup.git
+6. Type: git clone https://github.com/charlieflockhart/Playstation-Website-Final-Project.git
 7. Press Enter to create your local clone.
 
 ### Forking
