@@ -55,12 +55,16 @@ def move_game_to_chosen(request, title):
 
 @csrf_exempt
 def check_game_ownership(request, title):
-    print(f"checked this page for {title} ownership")
-    user = request.user
-    profile = get_object_or_404(Profile, user=user)
     post = get_object_or_404(Post, title=title)
+    if request.user.is_authenticated:
+        print(f"checked this page for {title} ownership")
+        user = request.user
+        profile = get_object_or_404(Profile, user=user)
+        
 
-    if post in profile.purchased_games.all():
-        return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
-    else:
+        if post in profile.purchased_games.all():
+            return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
+        else:
+            return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")
+    else:   
         return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")
