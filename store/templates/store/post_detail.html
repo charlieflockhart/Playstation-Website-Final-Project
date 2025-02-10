@@ -26,17 +26,20 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.developer }} | {{ post.release_date }}</p>
                 <p class="post-subtitle">£{{ post.price }}</p>
-                <form action="/move_game" method="post">
+                <form id="id_purchase_game" action="{%url 'move_game' post.title %}" method="post">
                     {% csrf_token %}
-                    <button id="purchasedButton" type="button" class="btn btn-primary orange_purchase_button" onclick="games_purchased()">Purchase</button>
+                    <button id="purchasedButton" type="submit" class="btn btn-primary orange_purchase_button" onclick="games_purchased()">Purchase</button>
                 </form>
                 
                 <script>
-                    function games_purchased() {
+                    const form = document.getElementById("id_purchase_game");
+                    purchasedButton.addEventListener("submit", function(event) {
+                        event.preventDefault();
                         console.log("Purchase button clicked");
                         document.getElementById("purchasedButton").innerText = "Purchased";
                         // document.getElementById("purchasedButton").disabled = true;
-                    }
+                        form.submit();
+                    });
                 </script>
             </div>
         </div>
