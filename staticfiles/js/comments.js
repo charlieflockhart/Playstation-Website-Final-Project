@@ -30,6 +30,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 */
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
+    console.log("edit button pressed");
     let commentId = e.target.getAttribute("data-comment_id");
 
     let commentTitle = document.getElementById(`title${commentId}`).innerText;
