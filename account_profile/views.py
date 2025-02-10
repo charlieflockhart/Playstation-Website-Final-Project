@@ -53,7 +53,6 @@ def move_game_to_chosen(request, title):
 
     return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
 
-@csrf_exempt
 def check_game_ownership(request, title):
     post = get_object_or_404(Post, title=title)
     if request.user.is_authenticated:
