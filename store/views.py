@@ -98,8 +98,8 @@ def post_detail(request, slug):
                 request, messages.SUCCESS,
                 'Comment submitted'
             )
-
-    comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
 
     return render(
         request,

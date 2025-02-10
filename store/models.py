@@ -49,7 +49,7 @@ class Post(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"{self.title} | written by {self.author}"
+        return f"{self.title} Developer {self.developer}"
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
@@ -76,4 +76,4 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+        return f"Comment by {self.author} on {self.post}, | {self.body}"
