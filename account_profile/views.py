@@ -63,4 +63,4 @@ def check_game_ownership(request, title):
     if post in profile.purchased_games.all():
         return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
     else:
-        return HttpResponseRedirect(reverse('post_detail', kwargs={'slug': post.slug}))
+        return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")

@@ -44,6 +44,7 @@
                     });
 
                     window.onload = function() {
+                        const urlParams = new URLSearchParams(window.location.search);
                         const checkForm = document.getElementById("id_check_game_purchased");
                         checkForm.addEventListener('submit', function(event) {
                             event.preventDefault();
@@ -53,27 +54,40 @@
                             checkForm.submit();
                             
                         });
+
+                        if (urlParams.has('purchased') && urlParams.get('purchased') === 'true') {
+                            checkGamePurchasedTrue();
+                        } else
+                        if (urlParams.has('purchased') && urlParams.get('purchased') === 'false') {
+                            checkGamePurchasedFalse();
+                        } else {
+                            checkGameFirstLoad();
+                        }
+
                         
-                        checkGame();
                     };
 
-                    function checkGame() {
-                        
-                        console.log("Checking if the game is purchased...");
-                        const urlParams = new URLSearchParams(window.location.search);
-                        if (urlParams.has('purchased') && urlParams.get('purchased') === 'true') {
-                            const purchaseButton = document.getElementById('purchasedButton');
-                            purchaseButton.textContent = 'Purchased';
-                            purchaseButton.disabled = true;
-                            return;
-                        } else {
-                            const purchaseButton = document.getElementById('purchasedButton');
-                            purchaseButton.textContent = 'Purchase';
-                            purchaseButton.disabled = false;
-                            document.getElementById("checkPurchasedButton").click();
-                        }
+                    function checkGameFirstLoad() {
+                        console.log("First Load");
+                        document.getElementById("checkPurchasedButton").click();   
+                    }
+
+                    function checkGamePurchasedTrue() {
+                        console.log("TRUE");
+                        const purchaseButton = document.getElementById('purchasedButton');
+                        purchaseButton.textContent = 'Purchased';
+                        purchaseButton.disabled = true;
                         
                     }
+
+                    function checkGamePurchasedFalse() {
+                        console.log("FALSE");
+                        const purchaseButton = document.getElementById('purchasedButton');
+                        purchaseButton.textContent = 'Purchase';
+                        purchaseButton.disabled = false;
+                        return;
+                    }
+
                 </script>
             </div>
         </div>
