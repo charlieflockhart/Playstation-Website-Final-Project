@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game
+from .models import Game, Profile
 # from django_summernote.admin import SummernoteModelAdmin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
@@ -25,5 +25,10 @@ class AccountInLine(admin.StackedInline):
 class CustomizedUserAdmin (AuthUserAdmin):
     inlines = (AccountInLine,)
 
+
+class ProfileAdmin(admin.ModelAdmin):
+    filter_horizontal = ('purchased_games',)
+
 admin.site.unregister(User)
 admin.site.register(User, CustomizedUserAdmin)
+admin.site.register(Profile, ProfileAdmin)

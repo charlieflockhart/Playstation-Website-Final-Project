@@ -69,7 +69,17 @@
         <p class="post-subtitle">Platinum Difficulty (1-10) (Easy - Difficult) | {{ post.trophy_plat_difficulty }}</p>
         <p class="post-subtitle">Platinum Glitched (1-10) (None - Unobtainable) | {{ post.trophy_plat_glitchiness }}</p>
         {% endif %}
-        
+        <hr>Awards<hr>
+        <p class="post-subtitle">Awards Won | {{ post.awards_shown|yesno:"Yes,None" }}</p>
+        {% if post.awards_shown %}
+        {% for award in post.awards_won.splitlines %}
+        {% if award %}
+        <li class="post-subtitle">{{ award }}</li>
+        {% else %}
+        <br>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
         </div>
         <br>
         <button class="btn btn-primary orange_purchase_button" onclick="window.open('{{ post.patch_notes_url }}', '_blank')">Patch Notes</button>
