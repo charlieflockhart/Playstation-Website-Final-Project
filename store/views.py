@@ -4,6 +4,9 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your views here.
 
@@ -145,3 +148,15 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+# @receiver(post_save, sender=User)
+# def create_or_update_user_profile(request, slug, sender, instance, created, **kwargs):
+#     """
+#     Create or update the user profile
+#     """
+#     if created == request.user:
+#         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+#     else:
+#         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+#     return HttpResponseRedirect(reverse('post_detail', args=[slug]))

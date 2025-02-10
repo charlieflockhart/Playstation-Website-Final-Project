@@ -33,13 +33,21 @@
                 
                 <script>
                     const form = document.getElementById("id_purchase_game");
-                    purchasedButton.addEventListener("submit", function(event) {
-                        event.preventDefault();
-                        console.log("Purchase button clicked");
-                        document.getElementById("purchasedButton").innerText = "Purchased";
-                        // document.getElementById("purchasedButton").disabled = true;
-                        form.submit();
+                    form.addEventListener('submit', function(event) {
+                        const purchasedButton = document.getElementById("purchasedButton");
+                        purchasedButton.innerText = "Purchased";
+                        purchasedButton.disabled = true;
                     });
+
+                    window.onload = function() {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        if (urlParams.has('purchased') && urlParams.get('purchased') === 'true') {
+                            const purchaseButton = document.getElementById('purchasedButton');
+                            purchaseButton.textContent = 'Purchased';
+                            purchaseButton.disabled = true;
+                        }
+                    }
+                    
                 </script>
             </div>
         </div>

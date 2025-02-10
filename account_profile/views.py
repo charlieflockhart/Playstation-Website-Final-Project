@@ -5,6 +5,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.contrib import messages
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 # def about_me(request):
     
@@ -41,13 +44,12 @@ def move_game_to_chosen(request, title):
         post = get_object_or_404(Post, title=title)
 
         if post in profile.purchased_games.all():
-            profile.purchased_games.remove(post)
-            profile.save()
-            print(f"this has been added to chosen_purchased_games and saved")
+            messages.error(request, f"You have already purchased the game: {title}")
         else:
             profile.purchased_games.add(post)
             profile.save()
             print(f"this has been added to chosen_purchased_games and saved")
+            messages.success(request, f"You have purchased the game: {title}")
 
-        return JsonResponse({'status': 'success'})
-    return JsonResponse({'status': 'failed'}, status=400)
+    return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
+        
