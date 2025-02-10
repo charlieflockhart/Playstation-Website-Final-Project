@@ -69,7 +69,7 @@ class Comment(models.Model):
     ]
     platform = models.CharField(max_length=3, choices=PLATFORM_CHOICES, default='PS4')
     body = models.TextField()
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
