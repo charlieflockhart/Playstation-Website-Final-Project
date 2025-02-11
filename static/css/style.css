@@ -465,8 +465,14 @@ hr {
 }
 
 /* Sign In */
-.signin_sign_up_sign_out{
+.sign_in{
     padding-top: 20%;
+}
+.sign_out{
+    padding-top: 20%;
+}
+.sign_up{
+    padding-top: 10%;
 }
 
 @media (max-width: 320px) {
