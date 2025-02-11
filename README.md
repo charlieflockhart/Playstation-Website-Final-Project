@@ -9,7 +9,7 @@
 - The target audience of this website would be Playstation based gamers.
 
 ## Agile methodology
-- ![Project Board](https://github.com/users/charlieflockhart/projects/7)
+- [Project Board](https://github.com/users/charlieflockhart/projects/7)
 
 I have throughout this project followed an agile workflow and methodology. I iterated and bug tested throughout due to the time constraint paired with dailing back on the overall scope of the project once again due to the time constraint. I primarily focused on the must haves and really tried to perfect them before moving onto the next.
 
