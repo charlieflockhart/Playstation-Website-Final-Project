@@ -9,7 +9,7 @@
 - The target audience of this website would be Playstation based gamers.
 
 ## Agile methodology
-LINK THE PROJECT BOARD
+- ![Project Board](https://github.com/users/charlieflockhart/projects/7)
 
 I have throughout this project followed an agile workflow and methodology. I iterated and bug tested throughout due to the time constraint paired with dailing back on the overall scope of the project once again due to the time constraint. I primarily focused on the must haves and really tried to perfect them before moving onto the next.
 
@@ -87,16 +87,16 @@ More can be found on the project board.
 
 ## Design
 ### Wireframes 
-
 #### Index Page
-
+- ![Index Page](Readme_Files/Wireframes/Home%20Page.png)
 #### Games Page
-
+- ![Games Page](Readme_Files/Wireframes/Game%20Page.png)
 #### Sign In
-
+- ![Sign In](Readme_Files/Wireframes/Sign%20Create%20Account.png)
 #### Support
-
-#### Game Page
+- ![Support](Readme_Files/Wireframes/Support%20Page.png)
+#### Game Details Page
+- ![Game Details Page](Readme_Files/Wireframes/Game%20Purchase%20Page.png)
 
 ### Colour Scheme 
 The colour scheme follows the same as the object of my study, Playstations own website. My aim for this project was to mimic the original website as much as possible hoping to focus on the tech side of the development process. 
@@ -116,7 +116,7 @@ For the images i used imported images from Playstations own website as my primar
 
 - The footer is on all pages and is similar to the focus of studies footer, minus the legal information.
 
-INSERT IMAGE
+- ![Home Page](Readme_Files/Review_Section/Home.png)
 
 ### User review
 - One of the main things I refined from the object of studies page is the review section, as this is made for gamers I thought it needed a few more key features that it didnt have before. 
@@ -129,40 +129,43 @@ New Features:
 
 These features provide more clarity on the game you are purchasing and the user base of it, for example you are more likely to believe a review from someone who has achieved Platinum in a game and if they have a high player level. This brings more honesty to the game reviews.
 
-INSERT IMAGE
+- ![Review Page](Readme_Files/Review_Section/Comments.png)
 
 ### Editing a user review 
 Players can edit their reviews when signed in and on that game's review section. It looks like below.
 
-INSERT IMAGE
+- ![Editing User Review](Readme_Files/Review_Section/Edited_Review.png)
 
 ### Deleting a user review 
 Deleteing a review, is as simple as editing one. The user after posting a review simply clicks delete and confirms in the modal that they would like to delete the comment and its gone. 
 
-INSERT IMAGE
+- ![Deleting a user review](Readme_Files/Review_Section/Delete_Review.png)
 
 ### Registering 
 Registering an account is done through the top navbar link, by clicking the link you go to the registration page where a Username, Email (Optional) and Password is requested. The user is required to fulfill a specific set of rules for the password for it to work. The email is optional as of right now as if this was linked to the Playstation Database this would connect you to a PS account.
 
-INSERT IMAGE
+- ![Registering](Readme_Files/Review_Section/Register.png)
 
 ### Logging in 
 
 Logging in is simple it just requires the Username and Password of the user and they have logged in.
 
-INSERT IMAGE
+- ![Logging in](Readme_Files/Review_Section/Log_In.png)
 
 ### Logging out 
 
 Loggin out can be done through the link in the navbar labbeled 'log out' it takes the user to a log out page which just confirms their want to sign out.
 
-INSERT IMAGE
+- ![Logging out](Readme_Files/Review_Section/Log_Out.png)
 
+### Game Purchase Page 
+
+- ![Game Purchase Page](Readme_Files/Review_Section/Games_Purchased.png)
 
 ### Footer
 - Following the original website im basing this project off i used a similar colour scheme, the one difference between the study and my reproduction is i have taken out all the legal links and replaced it with my github and social media links.
 
-INSERT IMAGE
+- ![Footer](Readme_Files/Review_Section/Footer.png)
 
 ## Database
 - I used Code Institute's PostgreSQL database.
