@@ -7,10 +7,10 @@
 
 {% block content %}
 <section id="login-background">
-  <div class="container container_background">
+  <div class="container container_background login">
         <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h3>{% trans "Sign in to Playstation" %}</h3>
+            <div class="col-md-8 mt-3 offset-md-2 loginintro">
+                <h3 class="loginintrotitle">{% trans "Sign in to Playstation" %}</h3>
 
                 <p>{% blocktrans %}Welcome back to the Playstation. To purchase, leave a comment or rate a game, please log in. If you have not created an account yet, then please <a class="link" href="{{ signup_url }}">Sign Up</a>.{% endblocktrans %}</p>
             </div>

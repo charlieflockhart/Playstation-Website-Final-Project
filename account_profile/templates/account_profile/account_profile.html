@@ -3,9 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container">
+<div class="container accountbox">
     <h2>User Profile</h2>
-    <img src="{% static 'images/nobody.jpg' %}" alt="Profile Picture" class="img-thumbnail">
+    <img src="{% static 'images/nobody.jpg' %}" alt="Profile Picture" class="img-thumbnail profilepic">
     <p><strong>Username:</strong> {{ user.username }}</p>
     <p><strong>Email:</strong> {{ user.email }}</p>
     <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>

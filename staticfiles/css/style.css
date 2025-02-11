@@ -34,7 +34,7 @@ body {
 }
 
 .main-bg {
-    background-color: var(--playstation_white)
+    background-color: var(--playstation_black_transparent)
 }
 
 .card {
@@ -47,10 +47,16 @@ body {
     box-shadow: 0 5px 14px rgb(0 0 0);
     border-radius: 5px;
     z-index: 2;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .indexcardtext {
-    font-size: 20px;
+    font-size: 22px;
+}
+
+.indexcardtitle {
+    font-size: 24px;
 }
 
 /* .indexcard:hover {
@@ -265,6 +271,9 @@ body {
     font-weight: 200 !important;
 }
 
+.Mainform {
+    margin-top: -50px;
+}
 .contactus {
     font-size: 150%;
     font-weight: 400;
@@ -288,10 +297,336 @@ body {
     background-color: var(--playstation_black);
 } */
 
-@media (max-width: 320px) {
-    /* ADD it so that the new release section on Index is collapsable */
+.gameintro {
+    font-size: 28px;
+    color: var(--playstation_white);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+hr {
+    border-top: 5px solid black;
+    margin: 1px;
+}
+
+.gamecard {
+    font-family: 'Noto Sans'!important;
+    color: var(--playstation_white) !important;
+    box-shadow: 0 5px 14px rgb(0 0 0);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.gamecardbody {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.gamecardtext {
+    font-size: 22px;
+}
+
+.gamecardtitle {
+    padding-top: 10px;
+}
+
+.populargames {
+    font-size: 28px;
+    color: var(--playstation_white);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.gamenav {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.page-link {
+    color: var(--playstation_black_transparent);
+    border-radius: .25rem;
+}
+
+.signup {
+    font-size: 24px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.signupintro {
+    font-size: 24px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.signupintrotitle {
+    font-size: 28px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.login {
+    font-size: 24px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.loginintro {
+    font-size: 24px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.loginintrotitle {
+    font-size: 28px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.btn-signup {
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.accountbox {
+    font-size: 24px;
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--playstation_white);
+    margin-top: 20px;
+}
+
+.hero-image-container {
+    padding: 0px;
+}
+
+.hero-text-div {
+    padding: 0px;
+}
+
+.cardcontainerindex {
+    padding: 0;
+}
+
+.game-info-top {
+    flex-direction: row;
+    background-color: var(--playstation_black_transparent);
+    justify-content: center;
+    font-size: 22px;
+    
+}
+
+.game-info-image {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.game-legal-info {
+    font-size: 28px;
+    color: var(--playstation_white);
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.cardrowindex {
+    width: 100%;
+}
+
+.indexcardcontain {
+    padding: 0;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+.container-fluid {
+    padding: 0;
 }
 
 @media (max-width: 320px) {
-    /* ADD it so that the new release section on Index is collapsable */
+    /* Home Page */
+    .cardtextindex:hover {
+        color: var(--playstation_blue);
+    } 
+
+    .indexcardtext {
+        font-size: 22px;
+    }
+
+    .indexcardtitle {
+        padding-top: 10px;
+    }
+
+    /* Game Page */
+    .alltextgame:hover {
+        color: var(--playstation_blue);
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 10px;
+    }
 }
+
+@media (min-width: 321px) and (max-width: 374px) {
+    /* Home Page */
+    .cardtextindex:hover {
+        color: var(--playstation_blue);
+    } 
+
+    .indexcard {
+        height: 450px;
+    }
+
+    .cardcontainerindex {
+        width: 100%;
+        padding: 0;
+    }
+
+    .gamecardbody {
+        height: 505px;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px;
+    }
+}
+
+
+@media (min-width: 375px) and (max-width: 767px) {
+    /* Home Page */
+    .cardtextindex:hover {
+        color: var(--playstation_blue);
+    } 
+
+    .indexcard {
+        height: 450px;
+    }
+
+    .cardcontainerindex {
+        width: 100%;
+        padding: 0;
+    }
+
+    .gamecardbody {
+        height: 505px;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px;
+    }
+} 
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Home Page */
+    .indexcard {
+        height: 425px;
+    }
+
+    .cardcontainerindex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Game Buy Page */
+    .game-info-top {
+        font-size: 24px;
+    }
+
+    .gamecardbody {
+        height: 560px;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px;
+    }
+
+    /*Account Page */
+    .accountbox {
+        font-size: 20px;
+    }
+    
+    .profilepic {
+        width: 20vw;
+        height: 20vw;
+    }
+    
+} 
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Home Page */
+    .indexcard {
+        height: 425px;
+    }
+
+    .cardcontainerindex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Game Buy Page */
+    .game-info-top {
+        font-size: 24px;
+    }
+
+    .gamecardcontainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gamecardbody {
+        height: 510px;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px;
+    }
+
+    .profilepic {
+        width: 20vw;
+        height: 20vw;
+    }
+
+} 
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    /* Home Page */
+
+    .cardcontainerindex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Game Buy Page */
+    .game-info-top {
+        font-size: 24px;
+    }
+
+    .gamecardcontainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gamecardbody {
+        height: 650px;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px;
+    }
+
+    .profilepic {
+        width: 20vw;
+        height: 20vw;
+    }
+} 

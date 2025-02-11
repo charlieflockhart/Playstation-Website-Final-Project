@@ -7,7 +7,7 @@
 <!-- Image Section -->
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row g-0 game-info-image">
             <div class="d-md-block col-md-6">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
@@ -21,9 +21,9 @@
 <!-- End Image Section -->
 
 <!-- Game Info Section -->
-<div class="container">
+<div class="container game-info">
     <div class="row">
-        <div class="card mb-4 mt-3 left top">
+        <div class="card mb-4 mt-3 left top game-info-top">
             <div class="col-md-6 masthead-text card_new">
 
                 <!-- Title  -->
@@ -109,7 +109,7 @@
     <br>
 
     <!-- Game and Legal Info -->
-    <div>
+    <div class="game-legal-info">
         <h1>Game And Legal Info</h1>
         <br>
         <article class="card-text"> {{ post.game_info | safe }} </article>
@@ -128,8 +128,8 @@
     </div>
 
     <!-- Comments Are Listed Here -->
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3 ">
+    <div class="row ">
+        <div class="col-md-8 card mb-4 mt-3 comments">
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
