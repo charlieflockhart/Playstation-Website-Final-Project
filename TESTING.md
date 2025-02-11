@@ -198,6 +198,7 @@
 
 ## Browsers
 - I use Google Chrome as my browser so all screenshots above are from Google Chrome.
+- ![Google Chrome screenshot]()
 - The site was tested on Microsoft Edge:
 - ![Microsoft Edge screenshot]()
 - The site was tested on Opera:
