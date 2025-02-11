@@ -569,73 +569,12 @@ hr {
     } 
 } 
 
-@media (min-width: 1025px) and (max-width: 1440px) {
-    /* Home Page */
-    .indexcard {
-        min-height: 400px;
-        height: auto;
-    }
-
-    .cardcontainerindex {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    /* Game Buy Page */
-    .game-info-top {
-        font-size: 24px;
-    }
-
-    .gamecardcontainer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gamecardbody {
-        height: 510px;
-    }
-
-    /* Register Page */
-    .container_background {
-        padding-top: 30px;
-    }
-
-    .profilepic {
-        width: 20vw;
-        height: 20vw;
-    }
-
-} 
-
 @media (min-width: 1441px) and (max-width: 2560px) {
     /* Home Page */
-
-    .cardcontainerindex {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    /* Game Buy Page */
-    .game-info-top {
-        font-size: 24px;
-    }
-
-    .gamecardcontainer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gamecardbody {
-        height: 650px;
-    }
-
-    /* Register Page */
-    .container_background {
-        padding-top: 30px;
-    }
-
-    .profilepic {
-        width: 20vw;
-        height: 20vw;
+    .indexcard {
+        min-height: 450px;
+        height: auto;
+        
     }
 } 
+
