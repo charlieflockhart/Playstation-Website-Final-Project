@@ -112,7 +112,7 @@
     <div class="game-legal-info" style="color: black;">
         <h1>Game And Legal Info</h1>
         <br>
-        <p class="card-text" > {{ post.game_info | safe }} </p>
+        <div class="card-text" > {{ post.game_info | safe }} </div>
     </div>
 
     <!-- Comment Count -->
@@ -155,7 +155,7 @@
                         <div class="col-12">
                             <hr>
                         </div>
-                        <div><h6 id="text{{ comment.id }}">{{ comment.body | linebreaks }}</h6></div>
+                        <div id="text{{ comment.id }}" style="font-weight: bold;">{{ comment.body | linebreaks }}</div>
                         <div class="col-12">
                             <hr>
                         </div>
