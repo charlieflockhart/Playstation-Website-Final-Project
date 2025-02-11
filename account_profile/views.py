@@ -27,7 +27,6 @@ class ProfileDetailedView(DetailView, LoginRequiredMixin):
 # It also displays a message to the user
 # It redirects the user to the game detail page
 def move_game_to_chosen(request, title):
-    print(f"move_game_to_chosen triggered for game: {title}")
     if request.method == 'POST':
         user = request.user
         profile = get_object_or_404(Profile, user=user)
@@ -38,7 +37,6 @@ def move_game_to_chosen(request, title):
         else:
             profile.purchased_games.add(post)
             profile.save()
-            print(f"this has been added to chosen_purchased_games and saved")
             messages.success(request, f"You have purchased the game: {title}")
 
     return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
@@ -65,7 +63,6 @@ def move_game_to_chosen(request, title):
 def check_game_ownership(request, title):
     post = get_object_or_404(Post, title=title)
     if request.user.is_authenticated:
-        print(f"checked this page for {title} ownership")
         user = request.user
         profile = get_object_or_404(Profile, user=user)
         
