@@ -10,7 +10,7 @@
 ### HTML by URL
 - The [W3C Validator](https://validator.w3.org/) was used to validate the HTML.
 #### Home
-- ![Home page validator screenshot]()
+- ![Home page validator screenshot](Readme_Files/HTML_URL/HTML_Validated_URL_Home.png)
 
 #### Games page
 - ![Games page validator screenshot]()
