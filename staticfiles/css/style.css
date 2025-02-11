@@ -293,9 +293,14 @@ body {
     font-size: 90%;
 }
 
-/* .navbar {
-    background-color: var(--playstation_black);
-} */
+.navbarleftpadding {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.navbarrightpadding {
+    margin-left: auto;
+    padding-right: 10px;
+}
 
 .gameintro {
     font-size: 28px;
@@ -430,6 +435,12 @@ hr {
     color: var(--playstation_white);
     font-weight: 500;
     font-family: 'Noto Sans', sans-serif;
+    background-color: var(--playstation_white);
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    padding-top: 40px;
 }
 
 .cardrowindex {
@@ -446,6 +457,11 @@ hr {
 
 .container-fluid {
     padding: 0;
+}
+
+.commentheading{
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 @media (max-width: 320px) {
@@ -480,7 +496,7 @@ hr {
     } 
 
     .indexcard {
-        height: 450px;
+        height: 490px;
     }
 
     .cardcontainerindex {
@@ -498,15 +514,14 @@ hr {
     }
 }
 
-
-@media (min-width: 375px) and (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 425px) {
     /* Home Page */
     .cardtextindex:hover {
         color: var(--playstation_blue);
     } 
 
     .indexcard {
-        height: 450px;
+        height: 600px;
     }
 
     .cardcontainerindex {
@@ -522,12 +537,37 @@ hr {
     .container_background {
         padding-top: 30px;
     }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Home Page */
+    .cardtextindex:hover {
+        color: var(--playstation_blue) !important;
+    } 
+
+    .indexcard {
+        height: 600px !important;
+    }
+
+    .cardcontainerindex {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .gamecardbody {
+        height: 505px !important;
+    }
+
+    /* Register Page */
+    .container_background {
+        padding-top: 30px !important;
+    } 
 } 
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     /* Home Page */
     .indexcard {
-        height: 425px;
+        height: 465px;
     }
 
     .cardcontainerindex {
