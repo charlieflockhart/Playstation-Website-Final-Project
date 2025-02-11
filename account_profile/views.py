@@ -26,20 +26,30 @@ class ProfileDetailedView(DetailView, LoginRequiredMixin):
 # It adds the game to the user's purchased games
 # It also displays a message to the user
 # It redirects the user to the game detail page
+
+# If the user is not logged in, it displays a message to the user
+# It redirects the user to the game detail page
+
 def move_game_to_chosen(request, title):
-    if request.method == 'POST':
-        user = request.user
-        profile = get_object_or_404(Profile, user=user)
-        post = get_object_or_404(Post, title=title)
+    post = get_object_or_404(Post, title=title)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            user = request.user
+            profile = get_object_or_404(Profile, user=user)
+        else:
+            post = get_object_or_404(Post, title=title)
 
         if post in profile.purchased_games.all():
             messages.error(request, f"You have already purchased the game: {title}")
+            return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
         else:
             profile.purchased_games.add(post)
             profile.save()
             messages.success(request, f"You have purchased the game: {title}")
-
-    return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
+            return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=true")
+    else :
+        messages.error(request, f'Please Sign In to purchase: {title}')
+    return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")
 
 
 # Function to check if the user owns the game
@@ -73,3 +83,4 @@ def check_game_ownership(request, title):
             return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")
     else:   
         return HttpResponseRedirect(f"{reverse('post_detail', kwargs={'slug': post.slug})}?purchased=false")
+    
