@@ -130,11 +130,14 @@
     <button class="btn btn-primary orange_purchase_button" onclick="window.open('{{ post.patch_notes_url }}', '_blank')">Patch Notes</button>
     <br>
 
+    
     <!-- Game and Legal Info -->
-    <div class="game-legal-info" style="color: black;">
-        <h1>Game And Legal Info</h1>
+    <button class="btn btn-link btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#legalInfoDetails" aria-expanded="false" aria-controls="legalInfoDetails">
+        Game And Legal Info
+    </button>
+    <div class="collapse" id="legalInfoDetails">
         <br>
-        <div class="card-text" > {{ post.game_info | safe }} </div>
+        <div class="card-text game-legal-info" > {{ post.game_info | safe }} </div>
     </div>
 
     <!-- Comment Count -->
