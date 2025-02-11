@@ -256,11 +256,17 @@ When it comes to the section about the comments, due to not being linked to the 
 #### Account
 - ![Lighthouse screenshot for account page](Readme_Files/Lighthouse/Desktop/Account_Lighthouse.png)
 
-#### Future improvements based on Lighthouse
-- 
+## User Testing
 
+| User Tester      | Feedback/Bug                                                                                                            | Bug Ref | Bug Status |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Richard Fletcher | When User not Registered / Logged in and a game is trying to be purchased resulted in a 404 error                       | Bug 1   | Closed     |
+| Richard Fletcher | Notification Message moves the background down, until the close button has been pressed returning to normal             | Bug 2   | Closed     |
 
 ## Responsiveness
+
+- ![Responsiveness](Readme_Files/Am_I_Responsive.png)
+
 ### Mobile (iPhone 16 Pro)
 - ![mobile responsiveness screenshot- home](Readme_Files/Responsiveness/Iphone_16_Home.png)
 - ![mobile responsiveness screenshot- register](Readme_Files/Responsiveness/Iphone_16_Register.png)

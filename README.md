@@ -1,5 +1,5 @@
 # Playstation Website Study
-INSERT IMAGE
+![Playstation Store](Readme_Files/Responsiveness/Laptop_Home.png)
 - Deployed project can be found [here](https://playstation-store-cflockhart-c73e53b52336.herokuapp.com/).
 
 ## User experience
