@@ -53,53 +53,75 @@
                 <br>
 
                 <!-- Game Info -->
-                <hr>Game Info<hr>
-                <p class="post-subtitle">Publisher | {{ post.publisher }}</p>
-                <p class="post-subtitle">Developer | {{ post.developer }}</p>
-                <p class="post-subtitle" id="game_version_current">Game Version | {{ post.game_version }}</p>
-                <p class="post-subtitle">Gameplay Time | {{ post.playtime}} Hours</p>
-                <p class="post-subtitle">Age Rating | {{ post.age_rating }}</p>
-                <p class="post-subtitle">Genre | {{ post.genre }}</p>
+                <button class="btn btn-link btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#gameInfoDetails" aria-expanded="true" aria-controls="gameInfoDetails">
+                    Game Info
+                </button>
+                <div class="collapse show" id="gameInfoDetails">
+                    <br>
+                    <p class="post-subtitle">Publisher | {{ post.publisher }}</p>
+                    <p class="post-subtitle">Developer | {{ post.developer }}</p>
+                    <p class="post-subtitle" id="game_version_current">Game Version | {{ post.game_version }}</p>
+                    <p class="post-subtitle">Gameplay Time | {{ post.playtime}} Hours</p>
+                    <p class="post-subtitle">Age Rating | {{ post.age_rating }}</p>
+                    <p class="post-subtitle">Genre | {{ post.genre }}</p>
+                </div>
                 <br>
 
                 <!-- Technical Info -->
-                <hr>Technical Info<hr> 
-                <p class="post-subtitle">Platform | {{ post.game_platform }}</p>
-                <p class="post-subtitle">Subtitles | {{ post.technical_subtitles|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">Refresh Rate | {{ post.technical_refresh_rate }} FPS</p>
-                <p class="post-subtitle">VRR Support | {{ post.technical_vrr|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">Ray Tracing | {{ post.technical_ray_tracing|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">HDR Support | {{ post.technical_hdr|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">Storage Size | {{ post.technical_storagesize }} GB</p>
-                <p class="post-subtitle">Online Play | {{ post.technical_online_play|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">Max Players | {{ post.technical_online_players }}</p>
-                <p class="post-subtitle">Console Crossplay Support | {{ post.technical_online_console_crossplay|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">PC Crossplay Support | {{ post.technical_online_pc_crossplay|yesno:"Yes,No" }}</p>
-                <p class="post-subtitle">Monthly Players | {{ post.technical_monthly_concurrent_players }}</p>
-
+                <button class="btn btn-link btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#technicalInfoDetails" aria-expanded="false" aria-controls="technicalInfoDetails">
+                    Technical Info
+                </button>
+                <div class="collapse" id="technicalInfoDetails">
+                    <br>
+                    <p class="post-subtitle">Platform | {{ post.game_platform }}</p>
+                    <p class="post-subtitle">Subtitles | {{ post.technical_subtitles|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">Refresh Rate | {{ post.technical_refresh_rate }} FPS</p>
+                    <p class="post-subtitle">VRR Support | {{ post.technical_vrr|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">Ray Tracing | {{ post.technical_ray_tracing|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">HDR Support | {{ post.technical_hdr|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">Storage Size | {{ post.technical_storagesize }} GB</p>
+                    <p class="post-subtitle">Online Play | {{ post.technical_online_play|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">Max Players | {{ post.technical_online_players }}</p>
+                    <p class="post-subtitle">Console Crossplay Support | {{ post.technical_online_console_crossplay|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">PC Crossplay Support | {{ post.technical_online_pc_crossplay|yesno:"Yes,No" }}</p>
+                    <p class="post-subtitle">Monthly Players | {{ post.technical_monthly_concurrent_players }}</p>
+                </div>
+                
+                
                 <!-- Trophies Info -->
-                <hr>Trophies<hr>
-                <p class="post-subtitle">Platinum | {{ post.platinum_trophies|yesno:"Yes,No" }}</p>
-                {% if post.platinum_trophies %}
-                <p class="post-subtitle">Trophies Needed To Platinum | {{ post.trophy_amount }}</p>
-                <p class="post-subtitle">Platinum Percentage | {{ post.trophy_achieved_percentage }}%</p>
-                <p class="post-subtitle">Platinum Duration | {{ post.trophy_duration_to_plat }} Hours</p>
-                <p class="post-subtitle">Platinum Difficulty (1-10) (Easy - Difficult) | {{ post.trophy_plat_difficulty }}</p>
-                <p class="post-subtitle">Platinum Glitched (1-10) (None - Unobtainable) | {{ post.trophy_plat_glitchiness }}</p>
-                {% endif %}
+                <button class="btn btn-link btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#trophiesDetails" aria-expanded="false" aria-controls="trophiesDetails">
+                    Trophies
+                </button>
+                <div class="collapse" id="trophiesDetails">
+                    <br>
+                    <p class="post-subtitle">Platinum | {{ post.platinum_trophies|yesno:"Yes,No" }}</p>
+                    {% if post.platinum_trophies %}
+                    <p class="post-subtitle">Trophies Needed To Platinum | {{ post.trophy_amount }}</p>
+                    <p class="post-subtitle">Platinum Percentage | {{ post.trophy_achieved_percentage }}%</p>
+                    <p class="post-subtitle">Platinum Duration | {{ post.trophy_duration_to_plat }} Hours</p>
+                    <p class="post-subtitle">Platinum Difficulty (1-10) (Easy - Difficult) | {{ post.trophy_plat_difficulty }}</p>
+                    <p class="post-subtitle">Platinum Glitched (1-10) (None - Unobtainable) | {{ post.trophy_plat_glitchiness }}</p>
+                    {% endif %}
+                </div>  
 
+                
                 <!-- Awards Info -->
-                <hr>Awards<hr>
-                <p class="post-subtitle">Awards Won | {{ post.awards_shown|yesno:"Yes,None" }}</p>
-                {% if post.awards_shown %}
-                    {% for award in post.awards_won.splitlines %}
-                        {% if award %}
-                            <li class="post-subtitle">{{ award }}</li>
-                        {% else %}
-                        <br>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
+                <button class="btn btn-link btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#awardsDetails" aria-expanded="false" aria-controls="awardsDetails">
+                    Awards
+                </button>
+                <div class="collapse" id="awardsDetails">
+                    <br>
+                    <p class="post-subtitle">Awards Won | {{ post.awards_shown|yesno:"Yes,None" }}</p>
+                    {% if post.awards_shown %}
+                        {% for award in post.awards_won.splitlines %}
+                            {% if award %}
+                                <li class="post-subtitle">{{ award }}</li>
+                            {% else %}
+                            <br>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
