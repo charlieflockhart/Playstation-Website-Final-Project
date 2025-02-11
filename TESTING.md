@@ -84,9 +84,11 @@ When it comes to the section about the comments, due to not being linked to the 
 
 #### Games Detail page
 - ![Games Detail page validator screenshot](Readme_Files/HTML_URL/HTML_Validated_URL_Game_Details.png)
+- This had an error due to summeradmin using font color in its form which is something I can't edit or change.  
 
 #### Register page
 - ![Register page validator screenshot](Readme_Files/HTML_URL/HTML_Validated_URL_Sign_Up.png)
+- Very similar error, this is due to signup in its form using to many or unsupported tags and elements
 
 #### Logout page
 - ![Logout page validator screenshot](Readme_Files/HTML_URL/HTML_Validated_URL_Log_Out.png)
@@ -96,6 +98,7 @@ When it comes to the section about the comments, due to not being linked to the 
 
 #### Account_Profile page
 - ![Account_Profile page validator screenshot](Readme_Files/HTML_URL/HTML_Validated_URL_Account.png)
+- This was an error due to not being able to login as this was using the HTML by URL 
 
 ### HTML by Direct Input
 #### Home
@@ -106,9 +109,11 @@ When it comes to the section about the comments, due to not being linked to the 
 
 #### Games Detail page
 - ![Games Detail page validator screenshot](Readme_Files/HTML_Direct_Input/HTML_Validated_Direct_Input_Game_Details.png)
+- This had an error due to summeradmin using font color in its form which is something I can't edit or change.  
 
 #### Register page
 - ![Register page validator screenshot](Readme_Files/HTML_Direct_Input/HTML_Validated_Direct_Input_Sign_Up.png)
+- Very similar error, this is due to signup in its form using to many or unsupported tags and elements
 
 #### Logout page
 - ![Logout page validator screenshot](Readme_Files/HTML_Direct_Input/HTML_Validated_Direct_Input_Log_Out.png)
@@ -256,22 +261,22 @@ When it comes to the section about the comments, due to not being linked to the 
 
 
 ## Responsiveness
-#### Mobile (iPhone 16 Pro)
+### Mobile (iPhone 16 Pro)
 - ![mobile responsiveness screenshot- home](Readme_Files/Responsiveness/Iphone_16_Home.png)
 - ![mobile responsiveness screenshot- register](Readme_Files/Responsiveness/Iphone_16_Register.png)
 - ![mobile responsiveness screenshot- game details](Readme_Files/Responsiveness/Iphone_16_Game_Details.png)
 
-#### Mobile (iPhone 13 Mini)
+### Mobile (iPhone 13 Mini)
 - ![mobile responsiveness screenshot- home](Readme_Files/Responsiveness/Iphone_13_Mini_Home.png)
 - ![mobile responsiveness screenshot- register](Readme_Files/Responsiveness/Iphone_13_Mini_Register.png)
 - ![mobile responsiveness screenshot- game details](Readme_Files/Responsiveness/Iphone_13_Mini_Game_Details.png)
 
-#### Tablet (iPad Pro 2024)
+### Tablet (iPad Pro 2024)
 - ![tablet responsiveness screenshot- home](Readme_Files/Responsiveness/Ipad_Home.png)
 - ![tablet responsiveness screenshot- register](Readme_Files/Responsiveness/Ipad_Register.png)
 - ![tablet responsiveness screenshot- game details](Readme_Files/Responsiveness/Ipad_Game_Details.png)
 
-#### Laptop (Windows 11)
+### Laptop (Windows 11)
 - ![laptop responsiveness screenshot- home](Readme_Files/Responsiveness/Laptop_Home.png)
 - ![laptop responsiveness screenshot- register](Readme_Files/Responsiveness/Laptop_Register.png)
 - ![laptop responsiveness screenshot- game details](Readme_Files/Responsiveness/Laptop_Game_Details.png)
