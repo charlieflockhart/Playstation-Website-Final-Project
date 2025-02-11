@@ -271,7 +271,7 @@ When it comes to the section about the comments, due to not being linked to the 
 - ![tablet responsiveness screenshot- register]()
 - ![tablet responsiveness screenshot- game details]()
 
-#### Desktop (Windows 11)
+#### Laptop (Windows 11)
 - ![laptop responsiveness screenshot- home]()
 - ![laptop responsiveness screenshot- register]()
 - ![laptop responsiveness screenshot- game details]()

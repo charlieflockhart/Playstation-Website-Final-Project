@@ -464,6 +464,11 @@ hr {
     padding-left: 20px;
 }
 
+/* Sign In */
+.signin_sign_up_sign_out{
+    padding-top: 20%;
+}
+
 @media (max-width: 320px) {
     /* Home Page */
     .cardtextindex:hover {
