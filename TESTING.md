@@ -6,7 +6,7 @@
 - Manual testing was carried out on the local and deployed sites.
                                                                          
 |Location       | Feature                 | Expected Outcome                                                | Pass/Fail|
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Navbar         | Home link               | On click goes to home webpage                                   | Pass     |
 |Navbar         | Games link              | On click goes to Games webpage                                  | Pass     |
 |Navbar         | Support link            | On click goes to Support webpage                                | Pass     |  
@@ -15,31 +15,31 @@
 |Navbar         | Account link            | On click goes to Account webpage                                | Pass     |
 |Navbar         | Logout link             | On click goes to Sign out webpage                               | Pass     |
 |Navbar         | Viewable on all pages   | The navbar to be visible on all webpages                        | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Support Page   | Live Chat Button        | On click goes to Playstations Live Chat                         | Pass     |    
 |Support Page   | Name Input              | Allows User to input their name                                 | Pass     |
 |Support Page   | Email Input             | Allows User to input their email                                | Pass     |
 |Support Page   | Issue Type Dropdown     | Allows User to select 1 of 3 types of issue                     | Pass     |  
 |Support Page   | Message Input           | Allows User to a longer description of their Issue              | Pass     |  
 |Support Page   | Submit                  | Allows User to submit their support request                     | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------| 
+|--------------|-------------------------|-----------------------------------------------------------------|---------| 
 |Register Page  | Username Input          | Allows User to input their Username                             | Pass     | 
 |Register Page  | Email Input             | Allows User to input their Email                                | Pass     | 
 |Register Page  | Password Input          | Allows User to input their Password                             | Pass     |
 |Register Page  | Password Input 2        | Allows User to input their Password again to confirm            | Pass     |
 |Register Page  | Sign Up Button          | Allows User to register their account/ sign up                  | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Sign In Page   | Username Input          | Allows User to input their Username                             | Pass     |
 |Sign In Page   | Password Input          | Allows User to input their Password                             | Pass     |
 |Sign In Page   | Remember Me Checkbox    | Allows User to select their info to be remembered               | Pass     |
 |Sign In Page   | Sign In Button          | Allows User to Sign into their account if all details = correct | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Account Page   | Shows Games Purchased   | Allows User to see their purchased games                        | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Logout Page    | Sign Out Button         | Allows User to sign out of their account                        | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Home, Games    | Game Cards              | Allows User to select a game to then go to that webpage         | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Game Info      | Purchase                | Allows User to select purchase that game, if theyre signed in   | Pass     |
 |Game Info      | Game Info DropDown      | Allows User to select hide the game info section                | Pass     |
 |Game Info      | Technical Info DropDown | Allows User to select hide the Technical Info section           | Pass     |
@@ -63,13 +63,13 @@
 |Game Info      | Delete Button       | Opens a pop up menu to delete comment | Pass     |
 |Game Info      | 'delete comment?' Delete Button       | Deletes the comment | Pass     |
 |Game Info      | 'delete comment?' Close Button       | Closes the 'delete comment?' menu. | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 |Footer      | Facebook Icon                | Takes user to Playstations Facebook  | Pass     |
 |Footer      | Twitter Icon                | Takes user to Playstations Twitter  | Pass     |
 |Footer      | Instagram Icon                | Takes user to Playstations Instagram  | Pass     |
 |Footer      | Youtube Icon                | Takes user to Playstations Youtube  | Pass     |
 |Footer      | Viewable on all pages   |The Footer to be visible on all webpages    | Pass     |
-|---------------|-------------------------|-----------------------------------------------------------------|----------|
+|--------------|-------------------------|-----------------------------------------------------------------|---------|
 
 When it comes to the section about the comments, due to not being linked to the playstations database the comment inputs about Playstation Level, Game Version and Platinum Achieved have had to be done manually due to not being able to pull the data from a accurate database like it would be if i had access to the relevant Playstations Data.
 
