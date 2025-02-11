@@ -7,22 +7,10 @@
                                                                          
 
 ## Code validators
-### HTML
+### HTML by URL
 - The [W3C Validator](https://validator.w3.org/) was used to validate the HTML.
-#### Base
-- ![Base page validator screenshot]()
-
 #### Home
 - ![Home page validator screenshot]()
-
-#### Logout page
-- ![Logout page validator screenshot]()
-
-#### Login page
-- ![Login page validator screenshot]()
-
-#### Register page
-- ![Register page validator screenshot]()
 
 #### Games page
 - ![Games page validator screenshot]()
@@ -30,11 +18,39 @@
 #### Games Detail page
 - ![Games Detail page validator screenshot]()
 
+#### Register page
+- ![Register page validator screenshot]()
+
+#### Logout page
+- ![Logout page validator screenshot]()
+
+#### Login page
+- ![Login page validator screenshot]()
+
 #### Account_Profile page
 - ![Account_Profile page validator screenshot]()
 
-#### Edit comment page
-- ![Edit comment validator screenshot]()
+### HTML by Direct Input
+#### Home
+- ![Home page validator screenshot]()
+
+#### Games page
+- ![Games page validator screenshot]()
+
+#### Games Detail page
+- ![Games Detail page validator screenshot]()
+
+#### Register page
+- ![Register page validator screenshot]()
+
+#### Logout page
+- ![Logout page validator screenshot]()
+
+#### Login page
+- ![Login page validator screenshot]()
+
+#### Account_Profile page
+- ![Account_Profile page validator screenshot]()
 
 ### CSS custom code
 - The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS.
@@ -59,21 +75,13 @@
 - The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python files.
 
 ## Playstation Project
-- admin.py
-- ![PEP8 screenshot]()
-- apps.py
-- ![PEP8 screenshot]()
-- forms.py
-- ![PEP8 screenshot]()
-- models.py
-- ![PEP8 screenshot]()
 - settings.py
 - ![PEP8 screenshot]()
-- ey-up/urls.py
+- playstation/urls.py
 - ![PEP8 screenshot]()
-- pup_review/urls.py
+- asgi.py
 - ![PEP8 screenshot]()
-- views.py
+- wsgi.py
 - ![PEP8 screenshot]()
 
 ## Store App
@@ -85,11 +93,7 @@
 - ![PEP8 screenshot]()
 - models.py
 - ![PEP8 screenshot]()
-- settings.py
-- ![PEP8 screenshot]()
-- ey-up/urls.py
-- ![PEP8 screenshot]()
-- pup_review/urls.py
+- store/urls.py
 - ![PEP8 screenshot]()
 - views.py
 - ![PEP8 screenshot]()
@@ -103,11 +107,7 @@
 - ![PEP8 screenshot]()
 - models.py
 - ![PEP8 screenshot]()
-- settings.py
-- ![PEP8 screenshot]()
-- ey-up/urls.py
-- ![PEP8 screenshot]()
-- pup_review/urls.py
+- support/urls.py
 - ![PEP8 screenshot]()
 - views.py
 - ![PEP8 screenshot]()
@@ -117,21 +117,13 @@
 - ![PEP8 screenshot]()
 - apps.py
 - ![PEP8 screenshot]()
-- forms.py
-- ![PEP8 screenshot]()
 - models.py
 - ![PEP8 screenshot]()
 - settings.py
 - ![PEP8 screenshot]()
-- ey-up/urls.py
-- ![PEP8 screenshot]()
-- pup_review/urls.py
+- account_profile/urls.py
 - ![PEP8 screenshot]()
 - views.py
-- ![PEP8 screenshot]()
-
-- Even though one line was considered too long by PEP8 (highlighted), I decided that the readability of the code was better when left on the same line, since it was very close to the accepted limit. Even though error exists, the app still functions. 
-- wsgi.py
 - ![PEP8 screenshot]()
 
 ### Lighthouse
