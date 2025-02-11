@@ -9,8 +9,12 @@
 - The target audience of this website would be Playstation based gamers.
 
 ## Agile methodology DO THIS SECTION
-- Agile methodology is "a set of methods and practices where solutions evolve through collaboration between self-organizing, cross-functional teams" ([reference]()).
+- Agile methodology is "a set of methods and practices where solutions evolve through collaboration between self-organizing, cross-functional teams".
 - A project board was set-up to keep track of user stories. Each user story was assigned a 'MoSCoW' prioritisation (must have, should have, could have, won't have) tag. The board can be found [here]().
+- Frequent Testing & Deployment
+- Focus on Working Software
+- Kanban / Project Board
+- ERD 
 
 ### User stories DO THIS SECTION
 
