@@ -496,11 +496,12 @@ hr {
     } 
 
     .indexcard {
-        height: 490px;
+        min-height: 490px;
+        height: auto;
     }
 
     .cardcontainerindex {
-        width: 100%;
+        max-width: 100%;
         padding: 0;
     }
 
@@ -521,16 +522,18 @@ hr {
     } 
 
     .indexcard {
-        height: 600px;
+        min-height: 450px;
+        height: auto;
     }
 
     .cardcontainerindex {
-        width: 100%;
+        max-width: 100%;
         padding: 0;
     }
 
     .gamecardbody {
-        height: 505px;
+        min-height: 490px;
+        height: auto;
     }
 
     /* Register Page */
@@ -546,16 +549,18 @@ hr {
     } 
 
     .indexcard {
-        height: 600px !important;
+        min-height: 450px;
+        height: auto;
     }
 
     .cardcontainerindex {
-        width: 100% !important;
+        max-width: 100%;
         padding: 0 !important;
     }
 
     .gamecardbody {
-        height: 505px !important;
+        min-height: 450px;
+        height: auto;
     }
 
     /* Register Page */
@@ -564,52 +569,16 @@ hr {
     } 
 } 
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Home Page */
-    .indexcard {
-        height: 465px;
-    }
-
-    .cardcontainerindex {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Game Buy Page */
-    .game-info-top {
-        font-size: 24px;
-    }
-
-    .gamecardbody {
-        height: 560px;
-    }
-
-    /* Register Page */
-    .container_background {
-        padding-top: 30px;
-    }
-
-    /*Account Page */
-    .accountbox {
-        font-size: 20px;
-    }
-    
-    .profilepic {
-        width: 20vw;
-        height: 20vw;
-    }
-    
-} 
-
 @media (min-width: 1025px) and (max-width: 1440px) {
     /* Home Page */
     .indexcard {
-        height: 425px;
+        min-height: 400px;
+        height: auto;
     }
 
     .cardcontainerindex {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     /* Game Buy Page */
@@ -643,7 +612,7 @@ hr {
 
     .cardcontainerindex {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     /* Game Buy Page */
