@@ -262,19 +262,19 @@ When it comes to the section about the comments, due to not being linked to the 
 - ![mobile responsiveness screenshot- game details](Readme_Files/Responsiveness/Iphone_16_Game_Details.png)
 
 #### Mobile (iPhone 13 Mini)
-- ![mobile responsiveness screenshot- home]()
-- ![mobile responsiveness screenshot- register]()
-- ![mobile responsiveness screenshot- game details]()
+- ![mobile responsiveness screenshot- home](Readme_Files/Responsiveness/Iphone_13_Mini_Home.png)
+- ![mobile responsiveness screenshot- register](Readme_Files/Responsiveness/Iphone_13_Mini_Register.png)
+- ![mobile responsiveness screenshot- game details](Readme_Files/Responsiveness/Iphone_13_Mini_Game_Details.png)
 
 #### Tablet (iPad Pro 2024)
-- ![tablet responsiveness screenshot- home]()
-- ![tablet responsiveness screenshot- register]()
-- ![tablet responsiveness screenshot- game details]()
+- ![tablet responsiveness screenshot- home](Readme_Files/Responsiveness/Ipad_Home.png)
+- ![tablet responsiveness screenshot- register](Readme_Files/Responsiveness/Ipad_Register.png)
+- ![tablet responsiveness screenshot- game details](Readme_Files/Responsiveness/Ipad_Game_Details.png)
 
 #### Laptop (Windows 11)
-- ![laptop responsiveness screenshot- home]()
-- ![laptop responsiveness screenshot- register]()
-- ![laptop responsiveness screenshot- game details]()
+- ![laptop responsiveness screenshot- home](Readme_Files/Responsiveness/Laptop_Home.png)
+- ![laptop responsiveness screenshot- register](Readme_Files/Responsiveness/Laptop_Register.png)
+- ![laptop responsiveness screenshot- game details](Readme_Files/Responsiveness/Laptop_Game_Details.png)
 
 ## Browsers
 - I use Google Chrome as my browser so all screenshots above are from Google Chrome.
