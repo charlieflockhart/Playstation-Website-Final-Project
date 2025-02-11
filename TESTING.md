@@ -71,6 +71,7 @@
 |Footer      | Viewable on all pages   |The Footer to be visible on all webpages    | Pass     |
 |---------------|-------------------------|-----------------------------------------------------------------|----------|
 
+When it comes to the section about the comments, due to not being linked to the playstations database the comment inputs about Playstation Level, Game Version and Platinum Achieved have had to be done manually due to not being able to pull the data from a accurate database like it would be if i had access to the relevant Playstations Data.
 
 ## Code validators
 ### HTML by URL
