@@ -4,14 +4,11 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 # Create your views here.
 
-# STORE VIEWS
-
+# STORE VIEWS - Index.html
+# Shows 6 games per index page
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     queryset = Post.objects.all()
@@ -24,8 +21,8 @@ def store(request):
         "store/index.html",
     )
 
-# GAMES VIEWS
-
+# GAMES VIEWS - Game.html
+# Shows 6 games per games page
 class GamesList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     queryset = Post.objects.all()
@@ -38,37 +35,7 @@ def games(request):
         "store/games.html",
     )
 
-# GAMES SEARCHED VIEWS
-
-class GamesSearchedList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
-    queryset = Post.objects.all()
-    template_name = "store/games_searched.html"
-    paginate_by = 6
-
-def games_searched(request):
-    if request.method == "POST":
-        # searched = request.POST['searched']
-
-        return render(request,
-            "store/games_searched.html",
-            # {"searched": searched}
-        )
-    else:
-        return render(
-            request,
-            "store/games_searched.html",
-        )
-
-# def search_view(request):
-#     query = request.GET.get('query', '')
-#     results = []
-
-#     if query:
-#         results = Post.objects.filter(name__icontains=query)  # Case-insensitive search
-
-#     return render(request, 'search_results.html', {'results': results, 'query': query})
-
+# Submit Comment Form View
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -112,6 +79,7 @@ def post_detail(request, slug):
         },  
     )
 
+# Edit comment view
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
@@ -134,6 +102,8 @@ def comment_edit(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+# Delete comment view
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
@@ -149,15 +119,3 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-# @receiver(post_save, sender=User)
-# def create_or_update_user_profile(request, slug, sender, instance, created, **kwargs):
-#     """
-#     Create or update the user profile
-#     """
-#     if created == request.user:
-#         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
-#     else:
-#         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
-
-#     return HttpResponseRedirect(reverse('post_detail', args=[slug]))

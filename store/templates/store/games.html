@@ -6,37 +6,10 @@
 <!-- index.html content starts here -->
 
 <h1>GAMES</h1>
-<!-- <div>
-    <form method="POST" action="{% url 'search' %}">
-
-        {% csrf_token %}
-        <input type="text" name="searched" placeholder="Grand Theft Auto VI">
-        <button type="submit">Search</button>
-    </form>
-    
-    {% if results %}
-        <ul>
-            {% for post in results %}
-                <li>{{ post.title }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No results found.</p>
-    {% endif %}
-
-    <div class="filter-tab">
-        <label for="filter">Filter by:</label>
-        <select id="filter" name="filter" class="form-control">
-            <option value="">Select</option>
-            <option value="price">Price</option>
-            <option value="developer">Developer</option>
-        </select>
-    </div>
-</div> -->
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Game Posts Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
@@ -68,6 +41,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
