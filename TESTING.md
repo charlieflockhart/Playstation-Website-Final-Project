@@ -257,9 +257,9 @@ When it comes to the section about the comments, due to not being linked to the 
 
 ## Responsiveness
 #### Mobile (iPhone 16 Pro)
-- ![mobile responsiveness screenshot- home]()
-- ![mobile responsiveness screenshot- register]()
-- ![mobile responsiveness screenshot- game details]()
+- ![mobile responsiveness screenshot- home](Readme_Files/Responsiveness/Iphone_16_Home.png)
+- ![mobile responsiveness screenshot- register](Readme_Files/Responsiveness/Iphone_16_Register.png)
+- ![mobile responsiveness screenshot- game details](Readme_Files/Responsiveness/Iphone_16_Game_Details.png)
 
 #### Mobile (iPhone 13 Mini)
 - ![mobile responsiveness screenshot- home]()
