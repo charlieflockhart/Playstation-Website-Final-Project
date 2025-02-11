@@ -126,9 +126,15 @@
 - views.py
 - ![PEP8 screenshot]()
 
-### Lighthouse
+### Lighthouse - Mobile
 #### Home
 - ![Lighthouse screenshot for home page]()
+
+#### Games
+- ![Lighthouse screenshot for games page]()
+
+#### Games Details
+- ![Lighthouse screenshot for games details page]()
 
 #### Register
 - ![Lighthouse screenshot for register page]()
@@ -139,12 +145,31 @@
 #### Logout
 - ![Lighthouse screenshot for logout page]()
 
-#### Purchase
-- ![Lighthouse screenshot for games page purchase]()
+#### Support
+- ![Lighthouse screenshot for support page]()
 
-#### Edit reviews
-- ![Lighthouse screenshot for games comments page]()
 
+### Lighthouse - Desktop
+#### Home
+- ![Lighthouse screenshot for home page]()
+
+#### Games
+- ![Lighthouse screenshot for games page]()
+
+#### Games Details
+- ![Lighthouse screenshot for games details page]()
+
+#### Register
+- ![Lighthouse screenshot for register page]()
+
+#### Login
+- ![Lighthouse screenshot for login page]()
+
+#### Logout
+- ![Lighthouse screenshot for logout page]()
+
+#### Support
+- ![Lighthouse screenshot for support page]()
 
 #### Future improvements based on Lighthouse
 - 
