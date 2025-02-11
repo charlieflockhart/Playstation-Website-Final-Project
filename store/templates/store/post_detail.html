@@ -109,10 +109,10 @@
     <br>
 
     <!-- Game and Legal Info -->
-    <div class="game-legal-info">
+    <div class="game-legal-info" style="color: black;">
         <h1>Game And Legal Info</h1>
         <br>
-        <article class="card-text"> {{ post.game_info | safe }} </article>
+        <p class="card-text" > {{ post.game_info | safe }} </p>
     </div>
 
     <!-- Comment Count -->
@@ -130,7 +130,7 @@
     <!-- Comments Are Listed Here -->
     <div class="row ">
         <div class="col-md-8 card mb-4 mt-3 comments">
-            <h3>Comments:</h3>
+            <h3 class="commentheading">Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
